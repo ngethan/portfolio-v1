@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-[Inter];
+    }
+
+    li {
+        @apply px-4;
+        @apply cursor-pointer;
+    }
+
+    .font-code {
+        @apply font-[monospace];
+    }
+
+    .hover-animation-light {
+        background: linear-gradient(#e98074 0 0) 0 100% / var(--d, 0) 1px no-repeat;
+        transition: 0.5s;
+
+        &:hover {
+            --d: 100%;
+        }
+    }
+
+    .hover-animation-dark {
+        background: linear-gradient(#e85a4f 0 0) 0 100% / var(--d, 0) 1px no-repeat;
+        transition: 0.5s;
+
+        &:hover {
+            --d: 100%;
+        }
+    }
+
+    .box-shadow {
+        -webkit-box-shadow: 0 10px 30px -10px #171a1c;
+        -moz-box-shadow: 0 10px 30px -10px #171a1c;
+        box-shadow: 0 10px 30px -10px #171a1c;
+    }
+}
+
+::selection {
+    background: #9b3c34;
+}
+
+::-moz-selection {
+    background: #9b3c34;
+}
