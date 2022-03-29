@@ -19,27 +19,35 @@
     }
 
     .hover-animation-light {
-        background: linear-gradient(#e98074 0 0) 0 100% / var(--d, 0) 1px no-repeat;
+        background: linear-gradient(#e98074 0 0) bottom / var(--d, 0) 1px no-repeat;
         transition: 0.5s;
-
-        &:hover {
-            --d: 100%;
-        }
+    }
+    .hover-animation-light:hover {
+        --d: 100%;
     }
 
     .hover-animation-dark {
-        background: linear-gradient(#e85a4f 0 0) 0 100% / var(--d, 0) 1px no-repeat;
+        background: linear-gradient(#e85a4f 0 0) bottom / var(--d, 0) 1px no-repeat;
         transition: 0.5s;
-
-        &:hover {
-            --d: 100%;
-        }
+    }
+    .hover-animation-dark:hover {
+        --d: 100%;
     }
 
     .box-shadow {
         -webkit-box-shadow: 0 10px 30px -10px #171a1c;
         -moz-box-shadow: 0 10px 30px -10px #171a1c;
         box-shadow: 0 10px 30px -10px #171a1c;
+    }
+
+    #toggle-dark,
+    #toggle-dark-md {
+        color: #2c77b8;
+    }
+
+    #toggle-light,
+    #toggle-light-md {
+        color: #fcd32b;
     }
 }
 

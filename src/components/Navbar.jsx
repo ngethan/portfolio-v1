@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Rotate as Hamburger } from "hamburger-react";
+import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -53,6 +54,39 @@ const Navbar = () => {
         },
     };
 
+    const changeTheme = () => {
+        const toggleDark =
+            window.innerWidth >= 768 ? document.getElementById("toggle-dark") : document.getElementById("toggle-dark-md");
+        const toggleLight =
+            window.innerWidth >= 768 ? document.getElementById("toggle-light") : document.getElementById("toggle-light-md");
+
+        if (localStorage.getItem("color-theme")) {
+            if (localStorage.getItem("color-theme") === "light") {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("color-theme", "dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("color-theme", "light");
+            }
+        } else {
+            if (document.documentElement.classList.contains("dark")) {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("color-theme", "light");
+            } else {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("color-theme", "dark");
+            }
+        }
+
+        if (toggleDark.style.display === "inline-flex") {
+            toggleDark.style.display = "none";
+            toggleLight.style.display = "inline-flex";
+        } else {
+            toggleDark.style.display = "inline-flex";
+            toggleLight.style.display = "none";
+        }
+    };
+
     return (
         <motion.div
             id="navbar"
@@ -89,10 +123,64 @@ const Navbar = () => {
                 <motion.li variants={item}>
                     <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Contact</p>
                 </motion.li>
+                <motion.li className="relative ml-5 cursor-default" variants={item}>
+                    <FiSun
+                        onClick={changeTheme}
+                        size={25}
+                        style={{
+                            display: "inline-flex",
+                            position: "absolute",
+                            bottom: "1.3px",
+                            left: 0,
+                            cursor: "pointer",
+                        }}
+                        id="toggle-light"
+                    />
+                    <FiMoon
+                        onClick={changeTheme}
+                        size={25}
+                        style={{
+                            display: "none",
+                            position: "absolute",
+                            bottom: "2.5px",
+                            left: 0,
+                            cursor: "pointer",
+                        }}
+                        id="toggle-dark"
+                    />
+                </motion.li>
             </motion.ul>
-            <div onClick={handleClick} className="md:hidden z-10">
-                <Hamburger toggled={nav} toggle={setNav} size={25} />
-            </div>
+
+            <motion.ul className="flex md:hidden font-code text-lg" initial="hidden" animate="visible" variants={list}>
+                <motion.li className="relative cursor-default" variants={item}>
+                    <FiSun
+                        onClick={changeTheme}
+                        size={25}
+                        style={{
+                            display: "inline-block",
+                            position: "relative",
+                            top: "10px",
+                            cursor: "pointer",
+                        }}
+                        id="toggle-light-md"
+                    />
+                    <FiMoon
+                        onClick={changeTheme}
+                        size={25}
+                        style={{
+                            display: "none",
+                            position: "relative",
+                            top: "10px",
+                            cursor: "pointer",
+                        }}
+                        id="toggle-dark-md"
+                    />
+                </motion.li>
+                <div onClick={handleClick} className="md:hidden">
+                    {" "}
+                    <Hamburger toggled={nav} toggle={setNav} size={25} />
+                </div>
+            </motion.ul>
 
             <ul
                 className={
