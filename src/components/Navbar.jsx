@@ -17,7 +17,7 @@ const Navbar = () => {
         if (currPos === 0) setTop(true);
         else setTop(false);
         if (prevPos > currPos) document.getElementById("navbar").style.top = "0";
-        else document.getElementById("navbar").style.top = "-100px";
+        else document.getElementById("navbar").style.top = "-80px";
         prevPos = currPos;
     };
 
@@ -92,8 +92,8 @@ const Navbar = () => {
             id="navbar"
             className={
                 top
-                    ? "duration-300 fixed w-full h-[80px] flex justify-between items-center p-[50px] bg-[#222629]/[.85] text-[#ccd6f6]"
-                    : "duration-300 fixed w-full h-[80px] flex justify-between items-center p-[50px] bg-[#222629]/[.85] box-shadow text-[#ccd6f6]"
+                    ? "duration-300 absolute w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-[#222629] text-[#ccd6f6]"
+                    : "duration-300 absolute w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-[#222629] box-shadow text-[#ccd6f6]"
             }
         >
             <motion.div
@@ -101,29 +101,27 @@ const Navbar = () => {
                 whileTap={{ scale: 0.9 }}
                 initial="hidden"
                 animate="visible"
-                transition={{ duration: 0.4 }}
                 variants={item}
             >
-                <motion.h1 className="text-5xl text-[#e98074] font-bold cursor-pointer">EN</motion.h1>
+                <motion.h1 className="text-5xl text-[#e98074] font-bold">EN</motion.h1>
             </motion.div>
-
             <motion.ul className="hidden md:flex font-code text-lg" initial="hidden" animate="visible" variants={list}>
-                <motion.li variants={item}>
+                <motion.li variants={item} className="cursor-none">
                     <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Home</p>
                 </motion.li>
-                <motion.li variants={item}>
+                <motion.li variants={item} className="cursor-none">
                     <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">About</p>
                 </motion.li>
-                <motion.li variants={item}>
+                <motion.li variants={item} className="cursor-none">
                     <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Skills</p>
                 </motion.li>
-                <motion.li variants={item}>
+                <motion.li variants={item} className="cursor-none">
                     <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Work</p>
                 </motion.li>
-                <motion.li variants={item}>
+                <motion.li variants={item} className="cursor-none">
                     <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Contact</p>
                 </motion.li>
-                <motion.li className="relative ml-5 cursor-default" variants={item}>
+                <motion.li className="relative ml-5 cursor-none" variants={item}>
                     <FiSun
                         onClick={changeTheme}
                         size={25}
@@ -132,7 +130,6 @@ const Navbar = () => {
                             position: "absolute",
                             bottom: "1.3px",
                             left: 0,
-                            cursor: "pointer",
                         }}
                         id="toggle-light"
                     />
@@ -144,7 +141,6 @@ const Navbar = () => {
                             position: "absolute",
                             bottom: "2.5px",
                             left: 0,
-                            cursor: "pointer",
                         }}
                         id="toggle-dark"
                     />
@@ -152,7 +148,7 @@ const Navbar = () => {
             </motion.ul>
 
             <motion.ul className="flex md:hidden font-code text-lg" initial="hidden" animate="visible" variants={list}>
-                <motion.li className="relative cursor-default" variants={item}>
+                <motion.li className="relative" variants={item}>
                     <FiSun
                         onClick={changeTheme}
                         size={25}

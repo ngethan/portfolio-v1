@@ -5,8 +5,40 @@
 @import "tailwindcss/utilities";
 
 @layer base {
+    * {
+        cursor: none;
+    }
+
     body {
+        background-color: #222629;
         @apply font-[Inter];
+    }
+
+    .cursor-dot,
+    .cursor-dot-outline {
+        margin: auto;
+        justify-content: center;
+        pointer-events: none;
+        z-index: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #e85a4f;
+    }
+
+    .cursor-dot-outline {
+        width: 20px;
+        height: 20px;
+        background-color: rgb(233, 128, 116, 0.5);
     }
 
     li {
@@ -52,14 +84,11 @@
         color: #fcd32b;
     }
 
-    .test {
+    ::selection {
+        background: #9b3c34;
     }
-}
 
-::selection {
-    background: #9b3c34;
-}
-
-::-moz-selection {
-    background: #9b3c34;
+    ::-moz-selection {
+        background: #9b3c34;
+    }
 }
