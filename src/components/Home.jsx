@@ -80,7 +80,7 @@ const Home = (data) => {
 
                 <div>
                     <motion.button
-                        className="text-[#E85A4F] border-[#E85A4F] font-code text-lg border-2 rounded px-6 py-3 my-2 flex items-center duration-300 hover:bg-[#E85A4F]/[.2]"
+                        className="text-[#E85A4F] border-[#E85A4F] font-code text-lg border-2 rounded px-6 py-3 my-2 flex items-center duration-300 test hover:bg-[#E85A4F]/[.2]"
                         variants={item}
                     >
                         View work
