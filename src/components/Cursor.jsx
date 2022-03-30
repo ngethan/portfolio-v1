@@ -64,6 +64,25 @@ const Cursor = () => {
 
         dot.current.style.left = endX.current + "px";
         dot.current.style.top = endY.current + "px";
+
+        const q = document.querySelectorAll(":hover");
+        const elType = q[q.length - 1].tagName;
+        if (elType === "H2" || elType === "P") {
+            dot.current.style.width = "3px";
+            dot.current.style.height = "20px";
+            dot.current.style.borderRadius = "0";
+            dotOutline.current.style.backgroundColor = "rgb(233, 128, 116, 0)";
+        } else if (elType === "A" || elType === "BUTTON" || elType === "H1") {
+            dot.current.style.width = "7px";
+            dot.current.style.height = "7px";
+            dot.current.style.borderRadius = "50%";
+            dotOutline.current.style.backgroundColor = "rgb(233, 128, 116, 0.5)";
+        } else {
+            dot.current.style.width = "7px";
+            dot.current.style.height = "7px";
+            dot.current.style.borderRadius = "50%";
+            dotOutline.current.style.backgroundColor = "rgb(233, 128, 116, 0)";
+        }
     };
 
     const animateDotOutline = () => {
@@ -97,10 +116,10 @@ const Cursor = () => {
     });
 
     return (
-        <>
+        <div className="relative top-0">
             <div ref={dotOutline} className="cursor-dot-outline"></div>
             <div ref={dot} className="cursor-dot"></div>
-        </>
+        </div>
     );
 };
 

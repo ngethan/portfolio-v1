@@ -95,34 +95,43 @@ const Navbar = () => {
                     ? "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-[#222629] text-[#ccd6f6]"
                     : "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-[#222629] box-shadow text-[#ccd6f6]"
             }
+            initial="hidden"
+            animate="visible"
+            variants={list}
         >
-            <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                initial="hidden"
-                animate="visible"
-                variants={item}
-            >
-                <motion.h1 className="text-5xl text-[#e98074] font-bold">EN</motion.h1>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} variants={item}>
+                <h1 className="text-5xl text-[#e98074] font-bold">EN</h1>
             </motion.div>
-            <motion.ul className="hidden md:flex font-code text-lg" initial="hidden" animate="visible" variants={list}>
+
+            <ul className="hidden md:flex font-code text-lg">
                 <motion.li variants={item} className="cursor-none">
-                    <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Home</p>
+                    <a className="duration-300 hover-animation-dark hover:text-[#e85a4f]" href="https://ethanng.dev">
+                        Home
+                    </a>
                 </motion.li>
                 <motion.li variants={item} className="cursor-none">
-                    <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">About</p>
+                    <a className="duration-300 hover-animation-dark hover:text-[#e85a4f]" href="https://ethanng.dev">
+                        About
+                    </a>
                 </motion.li>
                 <motion.li variants={item} className="cursor-none">
-                    <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Skills</p>
+                    <a className="duration-300 hover-animation-dark hover:text-[#e85a4f]" href="https://ethanng.dev">
+                        Skills
+                    </a>
                 </motion.li>
                 <motion.li variants={item} className="cursor-none">
-                    <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Work</p>
+                    <a className="duration-300 hover-animation-dark hover:text-[#e85a4f]" href="https://ethanng.dev">
+                        Work
+                    </a>
                 </motion.li>
                 <motion.li variants={item} className="cursor-none">
-                    <p className="duration-300 hover-animation-dark hover:text-[#e85a4f]">Contact</p>
+                    <a className="duration-300 hover-animation-dark hover:text-[#e85a4f]" href="https://ethanng.dev">
+                        Contact
+                    </a>
                 </motion.li>
                 <motion.li className="relative ml-5 cursor-none" variants={item}>
                     <FiSun
+                        id="toggle-light"
                         onClick={changeTheme}
                         size={25}
                         style={{
@@ -131,9 +140,9 @@ const Navbar = () => {
                             bottom: "1.3px",
                             left: 0,
                         }}
-                        id="toggle-light"
                     />
                     <FiMoon
+                        id="toggle-dark"
                         onClick={changeTheme}
                         size={25}
                         style={{
@@ -142,14 +151,14 @@ const Navbar = () => {
                             bottom: "2.5px",
                             left: 0,
                         }}
-                        id="toggle-dark"
                     />
                 </motion.li>
-            </motion.ul>
+            </ul>
 
-            <motion.ul className="flex md:hidden font-code text-lg" initial="hidden" animate="visible" variants={list}>
+            <ul className="flex md:hidden font-code text-lg">
                 <motion.li className="relative" variants={item}>
                     <FiSun
+                        id="toggle-light-md"
                         onClick={changeTheme}
                         size={25}
                         style={{
@@ -158,9 +167,9 @@ const Navbar = () => {
                             top: "10px",
                             cursor: "pointer",
                         }}
-                        id="toggle-light-md"
                     />
                     <FiMoon
+                        id="toggle-dark-md"
                         onClick={changeTheme}
                         size={25}
                         style={{
@@ -169,14 +178,14 @@ const Navbar = () => {
                             top: "10px",
                             cursor: "pointer",
                         }}
-                        id="toggle-dark-md"
                     />
                 </motion.li>
-                <div onClick={handleClick} className="md:hidden">
+
+                <div className="md:hidden" onClick={handleClick}>
                     {" "}
                     <Hamburger toggled={nav} toggle={setNav} size={25} />
                 </div>
-            </motion.ul>
+            </ul>
 
             <ul
                 className={
