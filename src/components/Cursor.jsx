@@ -97,10 +97,10 @@ const Cursor = () => {
     });
 
     return (
-        <div className="sticky top-0">
+        <>
             <div ref={dotOutline} className="cursor-dot-outline"></div>
             <div ref={dot} className="cursor-dot"></div>
-        </div>
+        </>
     );
 };
 

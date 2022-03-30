@@ -92,8 +92,8 @@ const Navbar = () => {
             id="navbar"
             className={
                 top
-                    ? "duration-300 absolute w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-[#222629] text-[#ccd6f6]"
-                    : "duration-300 absolute w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-[#222629] box-shadow text-[#ccd6f6]"
+                    ? "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-[#222629] text-[#ccd6f6]"
+                    : "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-[#222629] box-shadow text-[#ccd6f6]"
             }
         >
             <motion.div

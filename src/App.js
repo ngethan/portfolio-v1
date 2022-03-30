@@ -6,8 +6,8 @@ import Cursor from "./components/Cursor";
 function App() {
     return (
         <div>
-            <Cursor />
             <Navbar />
+            <Cursor />
             <Home />
             <About />
         </div>

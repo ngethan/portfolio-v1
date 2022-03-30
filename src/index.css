@@ -9,6 +9,19 @@
         cursor: none;
     }
 
+    *::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: #383b3e;
+        border-radius: 25px;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background-color: #e85a4f;
+    }
+
     body {
         background-color: #222629;
         @apply font-[Inter];
@@ -19,8 +32,7 @@
         margin: auto;
         justify-content: center;
         pointer-events: none;
-        z-index: 0;
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
