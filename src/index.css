@@ -14,12 +14,12 @@
     }
 
     *::-webkit-scrollbar-thumb {
-        background-color: #383b3e;
+        @apply bg-gray-800;
         border-radius: 25px;
     }
 
     *::-webkit-scrollbar-thumb:hover {
-        background-color: #e85a4f;
+        @apply bg-red-500;
     }
 
     ::-webkit-scrollbar-track-piece {
@@ -28,7 +28,7 @@
     }
 
     body {
-        background-color: #222629;
+        background-color: theme("colors.gray.800");
         @apply font-[Inter];
     }
 
@@ -50,7 +50,7 @@
     .cursor-dot {
         width: 8px;
         height: 8px;
-        background-color: #e85a4f;
+        background-color: theme("colors.red.500");
         border: 2px solid transparent;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border 0.3s ease-in-out;
     }
@@ -74,7 +74,7 @@
     }
 
     .hover-animation-light {
-        background: linear-gradient(#e98074 0 0) var(--p, 0) 100% / var(--d, 0) 1px no-repeat;
+        background: linear-gradient(theme("colors.red.200") 0 0) var(--p, 0) 100% / var(--d, 0) 1px no-repeat;
         transition: 0.3s, background-position 0s 0.3s;
     }
     .hover-animation-light:hover {
@@ -83,7 +83,7 @@
     }
 
     .hover-animation-dark {
-        background: linear-gradient(#e85a4f 0 0) var(--p, 0) 100% / var(--d, 0) 1px no-repeat;
+        background: linear-gradient(theme("colors.red.400") 0 0) var(--p, 0) 100% / var(--d, 0) 1px no-repeat;
         transition: 0.3s, background-position 0s 0.3s;
     }
     .hover-animation-dark:hover {
@@ -92,9 +92,9 @@
     }
 
     .box-shadow {
-        -webkit-box-shadow: 0 10px 30px -10px #171a1c;
-        -moz-box-shadow: 0 10px 30px -10px #171a1c;
-        box-shadow: 0 10px 30px -10px #171a1c;
+        -webkit-box-shadow: 0 10px 30px -10px theme("colors.gray.900");
+        -moz-box-shadow: 0 10px 30px -10px theme("colors.gray.900");
+        box-shadow: 0 10px 30px -10px theme("colors.gray.900");
     }
 
     #toggle-dark,
@@ -108,10 +108,21 @@
     }
 
     ::selection {
-        background: #9b3c34;
+        background: rgb(232, 49, 63, 0.3);
     }
 
     ::-moz-selection {
-        background: #9b3c34;
+        background: rgb(232, 49, 63, 0.3);
+    }
+
+    .vertical-line {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        top: 100%;
+        left: 47%;
+        background-color: rgba(255, 255, 255, 0.5);
     }
 }
