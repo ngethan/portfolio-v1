@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 const Cursor = () => {
-    const delay = 5;
+    const delay = 10;
     const cursorVisible = useRef(true);
     const cursorEnlarged = useRef(false);
 
@@ -74,8 +74,8 @@ const Cursor = () => {
             dot.current.style.border = "0px solid transparent";
             dot.current.style.borderRadius = "0";
 
-            dotOutline.current.style.width = "30px";
-            dotOutline.current.style.height = "30px";
+            dotOutline.current.style.width = "40px";
+            dotOutline.current.style.height = "40px";
             dotOutline.current.style.borderColor = "transparent";
             dotOutline.current.style.backgroundColor = "transparent";
         } else if (elType === "A" || elType === "BUTTON" || elType === "H1") {
@@ -88,14 +88,14 @@ const Cursor = () => {
             dotOutline.current.style.borderColor = "#e85a4f";
             dotOutline.current.style.backgroundColor = "transparent";
         } else {
-            dot.current.style.width = "10px";
-            dot.current.style.height = "10px";
+            dot.current.style.width = "8px";
+            dot.current.style.height = "8px";
             dot.current.style.backgroundColor = "#e85a4f";
             dot.current.style.borderColor = "transparent";
             dot.current.style.borderRadius = "50%";
 
-            dotOutline.current.style.width = "30px";
-            dotOutline.current.style.height = "30px";
+            dotOutline.current.style.width = "40px";
+            dotOutline.current.style.height = "40px";
             dotOutline.current.style.borderColor = "rgb(233, 128, 116)";
             dotOutline.current.style.backgroundColor = "transparent";
         }

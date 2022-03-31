@@ -48,16 +48,16 @@
     }
 
     .cursor-dot {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         background-color: #e85a4f;
         border: 2px solid transparent;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border 0.3s ease-in-out;
     }
 
     .cursor-dot-outline {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         background-color: transparent;
         border: 2px solid rgb(233, 128, 116, 0.5);
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out,
