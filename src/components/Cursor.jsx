@@ -79,7 +79,6 @@ const Cursor = () => {
             dotOutline.current.style.borderColor = "transparent";
             dotOutline.current.style.backgroundColor = "transparent";
         } else if (q[7]?.tagName === "A" || ["A", "BUTTON", "H1", "svg"].includes(elType)) {
-            console.log(true);
             dot.current.style.backgroundColor = "transparent";
             dot.current.style.border = "none";
             dot.current.style.borderRadius = "50%";

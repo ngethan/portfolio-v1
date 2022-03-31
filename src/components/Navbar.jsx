@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
-import { FiGithub, FiLinkedin, FiInstagram, FiCodepen } from "react-icons/fi";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -73,11 +72,6 @@ const Navbar = () => {
             <ul className="hidden md:flex font-code text-lg">
                 <motion.li variants={item} className="cursor-none">
                     <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
-                        Home
-                    </a>
-                </motion.li>
-                <motion.li variants={item} className="cursor-none">
-                    <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
                         About
                     </a>
                 </motion.li>
@@ -98,37 +92,9 @@ const Navbar = () => {
                 </motion.li>
             </ul>
 
-            <ul className="flex md:hidden font-code text-lg">
-                <div className="md:hidden" onClick={handleClick}>
-                    {" "}
-                    <Hamburger toggled={nav} toggle={setNav} size={25} />
-                </div>
-            </ul>
-
-            <ul className="hidden icon:flex flex-col fixed top-[58%] right-[2%] justify-center">
-                <li className="mb-[30px] cursor-none">
-                    <a href="https://github.com/intuitiveen" target="_blank" rel="noreferrer">
-                        <FiGithub className="text-gray-200 duration-300 hover:text-red-500" size={25} />
-                    </a>
-                </li>
-                <li className="mb-[30px] cursor-none">
-                    <a href="https://www.linkedin.com/in/ethan-ng-007312235/" target="_blank" rel="noreferrer">
-                        <FiLinkedin className="text-gray-200 duration-300 hover:text-red-500" size={25} />
-                    </a>
-                </li>
-                <li className="mb-[30px] cursor-none">
-                    <a href="https://www.instagram.com/ethan.ng6/" target="_blank" rel="noreferrer">
-                        <FiInstagram className="text-gray-200 duration-300 hover:text-red-500" size={25} />
-                    </a>
-                </li>
-                <li className="mb-[30px] cursor-none">
-                    <a href="https://codepen.io/intuitiveen/" target="_blank" rel="noreferrer">
-                        <FiCodepen className="text-gray-200 duration-300 hover:text-red-500" size={25} />
-                    </a>
-                </li>
-
-                <div className="after:vertical-line"></div>
-            </ul>
+            <div className="md:hidden z-10" onClick={handleClick}>
+                <Hamburger toggled={nav} toggle={setNav} size={25} />
+            </div>
 
             <ul
                 className={
@@ -137,9 +103,6 @@ const Navbar = () => {
                         : "absolute top-0 left-0 w-full h-screen bg-gray-800 flex flex-col justify-center items-center font-code text-lg"
                 }
             >
-                <li>
-                    <p className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400">Home</p>
-                </li>
                 <li>
                     <p className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400">About</p>
                 </li>
