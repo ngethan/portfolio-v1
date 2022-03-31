@@ -133,7 +133,13 @@ const Cursor = () => {
     });
 
     return (
-        <div className="relative top-0">
+        <div
+            className={
+                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+                    ? "hidden"
+                    : "relative top-0"
+            }
+        >
             <div ref={dotOutline} className="cursor-dot-outline"></div>
             <div ref={dot} className="cursor-dot"></div>
         </div>
