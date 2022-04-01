@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FiGithub, FiLinkedin, FiInstagram, FiCodepen } from "react-icons/fi";
 
 const Side = () => {
     const list = {
