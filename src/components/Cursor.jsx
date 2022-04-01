@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 const Cursor = () => {
-    const delay = 10;
+    let delay = 10;
     const cursorVisible = useRef(true);
     const cursorEnlarged = useRef(false);
 
@@ -78,7 +78,7 @@ const Cursor = () => {
             dotOutline.current.style.height = "40px";
             dotOutline.current.style.borderColor = "transparent";
             dotOutline.current.style.backgroundColor = "transparent";
-        } else if (q[7]?.tagName === "A" || ["A", "BUTTON", "H1", "svg"].includes(elType)) {
+        } else if (q[7]?.tagName === "A" || ["LI", "A", "BUTTON", "H1", "svg"].includes(elType)) {
             dot.current.style.backgroundColor = "transparent";
             dot.current.style.border = "none";
             dot.current.style.borderRadius = "50%";
@@ -87,6 +87,7 @@ const Cursor = () => {
             dotOutline.current.style.height = "50px";
             dotOutline.current.style.borderColor = "#E8313F";
             dotOutline.current.style.backgroundColor = "transparent";
+            delay = 1;
         } else {
             dot.current.style.width = "8px";
             dot.current.style.height = "8px";
@@ -98,6 +99,7 @@ const Cursor = () => {
             dotOutline.current.style.height = "40px";
             dotOutline.current.style.borderColor = "#EC5A65";
             dotOutline.current.style.backgroundColor = "transparent";
+            delay = 10;
         }
     };
 

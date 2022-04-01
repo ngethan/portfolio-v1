@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Cursor from "./components/Cursor";
 import Side from "./components/Side";
+import Work from "./components/Work";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <Cursor />
             <Home />
             <About />
+            <Work />
             <Side />
         </div>
     );
