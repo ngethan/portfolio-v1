@@ -103,6 +103,11 @@
         color: theme("colors.red.500");
     }
 
+    .inactive-work:hover {
+        background-color: rgba(236, 90, 101, 0.1);
+        color: theme("colors.red.500");
+    }
+
     #toggle-dark,
     #toggle-dark-md {
         color: #2c77b8;

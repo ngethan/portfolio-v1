@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Spin as Hamburger } from "hamburger-react";
-import { motion } from "framer-motion";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -28,6 +29,14 @@ const Navbar = () => {
         };
     });
 
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [controls, inView]);
+
     const list = {
         visible: {
             opacity: 1,
@@ -53,6 +62,11 @@ const Navbar = () => {
         },
     };
 
+    const variants = {
+        open: { opacity: 1, x: 0 },
+        closed: { opacity: 0, x: "-100%" },
+    };
+
     return (
         <motion.div
             id="navbar"
@@ -62,8 +76,9 @@ const Navbar = () => {
                     : "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 box-shadow text-gray-100"
             }
             initial="hidden"
-            animate="visible"
+            animate={controls}
             variants={list}
+            ref={ref}
         >
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} variants={item}>
                 <h1 className="text-5xl text-red-500 font-bold">EN</h1>
@@ -96,12 +111,13 @@ const Navbar = () => {
                 <Hamburger toggled={nav} toggle={setNav} size={25} />
             </div>
 
-            <ul
+            <motion.ul
                 className={
                     !nav
                         ? "hidden"
                         : "absolute top-0 left-0 w-full h-screen bg-gray-800 flex flex-col justify-center items-center font-code text-lg"
                 }
+                variants={variants}
             >
                 <li>
                     <p className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400">About</p>
@@ -115,7 +131,7 @@ const Navbar = () => {
                 <li>
                     <p className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400">Contact</p>
                 </li>
-            </ul>
+            </motion.ul>
         </motion.div>
     );
 };

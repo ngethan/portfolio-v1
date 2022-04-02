@@ -1,7 +1,16 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Home = (data) => {
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [controls, inView]);
+
     const list = {
         visible: {
             opacity: 1,
@@ -32,8 +41,9 @@ const Home = (data) => {
             name="home"
             className="w-full h-screen bg-gray-800 max-w-[1075px] mx-auto px-8 flex flex-col justify-center"
             initial="hidden"
-            animate="visible"
+            animate={controls}
             variants={list}
+            ref={ref}
         >
             <motion.div className="flex text-gray-100 text-xl font-code" variants={item}>
                 <p>👋 Hi there, I'm</p>
