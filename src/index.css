@@ -98,7 +98,6 @@
     }
 
     .active-work {
-        border-left: 3px solid theme("colors.red.500") !important;
         background-color: rgba(236, 90, 101, 0.1);
         color: theme("colors.red.500");
     }

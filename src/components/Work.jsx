@@ -69,6 +69,10 @@ const Work = () => {
         },
     };
 
+    function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
     const handleTCSClick = () => {
         let prevActive = document.getElementsByClassName("active-work")[0];
         if (prevActive && prevActive.id === "tcs") return;
@@ -81,6 +85,7 @@ const Work = () => {
         document.getElementById("name").href = workData.tcs.url;
         document.getElementById("duration").innerHTML = workData.tcs.duration;
         document.getElementById("description").textContent = workData.tcs.description;
+        sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "126px"));
     };
 
     const handleMPRClick = () => {
@@ -95,6 +100,7 @@ const Work = () => {
         document.getElementById("name").href = workData.mpr.url;
         document.getElementById("duration").textContent = workData.mpr.duration;
         document.getElementById("description").textContent = workData.mpr.description;
+        sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "84px"));
     };
 
     const handleNYDEOClick = () => {
@@ -109,6 +115,7 @@ const Work = () => {
         document.getElementById("name").href = workData.nydeo.url;
         document.getElementById("duration").textContent = workData.nydeo.duration;
         document.getElementById("description").textContent = workData.nydeo.description;
+        sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "42px"));
     };
 
     return (
@@ -119,35 +126,46 @@ const Work = () => {
             variants={list}
             ref={ref}
         >
-            <motion.p className="text-4xl text-gray-100 font-bold inline mb-[40px]" variants={itemY}>
-                My work
-            </motion.p>
+            <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold" variants={itemY}>
+                {["M", "y", "\xa0", "w", "o", "r", "k"].map((letter) => {
+                    return (
+                        <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+                            {letter}
+                        </h1>
+                    );
+                })}
+            </motion.div>
+
             <div className="flex h-screen">
                 <ul className="flex flex-col justify-left items-left w-[160px] h-full text-[13px] font-code float-left">
                     <motion.li
                         id="tcs"
-                        className="w-[160px] duration-300 cursor-none inline-block border-l-[3px] border-gray-600 py-4 active-work"
+                        className="flex items-center w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 active-work"
                         onClick={handleTCSClick}
                         variants={itemX}
                     >
-                        theCoderSchool
+                        <button className="cursor-none">theCoderSchool</button>
                     </motion.li>
                     <motion.li
                         id="mpr"
-                        className="w-[160px] duration-300 cursor-none inline-block border-l-[3px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 inactive-work"
                         onClick={handleMPRClick}
                         variants={itemX}
                     >
-                        Muddy Paws Rescue
+                        <button className="cursor-none">Muddy Paws Rescue</button>
                     </motion.li>
                     <motion.li
                         id="nydeo"
-                        className="w-[160px] duration-300 cursor-none inline-block border-l-[3px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 inactive-work"
                         onClick={handleNYDEOClick}
                         variants={itemX}
                     >
-                        NYDEO
+                        <button className="cursor-none">NYDEO</button>
                     </motion.li>
+                    <div
+                        id="selected-indicator"
+                        className="relative bottom-[126px] w-[2px] h-[42px] border-l-[2px] border-red-500 transition-top duration-300"
+                    ></div>
                 </ul>
 
                 <div className="ml-[25px] float-right">
