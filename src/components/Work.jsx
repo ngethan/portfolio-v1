@@ -39,11 +39,11 @@ const Work = () => {
         prevActive?.classList.remove("active-work");
         document.getElementById("tcs")?.classList.add("active-work");
 
-        name.innerHTML = workData.tcs.name;
-        title.innerHTML = workData.tcs.title;
+        name.innerText = workData.tcs.name;
+        title.innerText = workData.tcs.title;
         name.href = workData.tcs.url;
-        duration.innerHTML = workData.tcs.duration;
-        description.innerHTML = workData.tcs.description;
+        duration.innerText = workData.tcs.duration;
+        description.innerText = workData.tcs.description;
     };
 
     const handleMPRClick = () => {
@@ -52,11 +52,11 @@ const Work = () => {
         prevActive?.classList.remove("active-work");
         document.getElementById("mpr")?.classList.add("active-work");
 
-        name.innerHTML = workData.mpr.name;
-        title.innerHTML = workData.mpr.title;
+        name.innerText = workData.mpr.name;
+        title.innerText = workData.mpr.title;
         name.href = workData.mpr.url;
-        duration.innerHTML = workData.mpr.duration;
-        description.innerHTML = workData.mpr.description;
+        duration.innerText = workData.mpr.duration;
+        description.innerText = workData.mpr.description;
     };
 
     const handleNYDEOClick = () => {
@@ -65,11 +65,11 @@ const Work = () => {
         prevActive?.classList.remove("active-work");
         document.getElementById("nydeo")?.classList.add("active-work");
 
-        name.innerHTML = workData.nydeo.name;
-        title.innerHTML = workData.nydeo.title;
+        name.innerText = workData.nydeo.name;
+        title.innerText = workData.nydeo.title;
         name.href = workData.nydeo.url;
-        duration.innerHTML = workData.nydeo.duration;
-        description.innerHTML = workData.nydeo.description;
+        duration.innerText = workData.nydeo.duration;
+        description.innerText = workData.nydeo.description;
     };
 
     return (
