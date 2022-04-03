@@ -79,15 +79,16 @@ const Cursor = () => {
             dotOutline.current.style.borderColor = "transparent";
             dotOutline.current.style.backgroundColor = "transparent";
         } else if (q[7]?.tagName === "A" || ["LI", "A", "BUTTON", "H1", "svg"].includes(elType)) {
-            dot.current.style.backgroundColor = "transparent";
-            dot.current.style.border = "none";
+            dot.current.style.width = "8px";
+            dot.current.style.height = "8px";
+            dot.current.style.backgroundColor = "#E8313F";
+            dot.current.style.border = "0px solid transparent";
             dot.current.style.borderRadius = "50%";
 
             dotOutline.current.style.width = "50px";
             dotOutline.current.style.height = "50px";
             dotOutline.current.style.borderColor = "#E8313F";
             dotOutline.current.style.backgroundColor = "transparent";
-            delay = 1;
         } else {
             dot.current.style.width = "8px";
             dot.current.style.height = "8px";
