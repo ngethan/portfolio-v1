@@ -15,9 +15,9 @@ const Home = (data) => {
         visible: {
             opacity: 1,
             transition: {
-                delay: 0.6,
+                delay: 1.1,
                 when: "beforeChildren",
-                staggerChildren: 0.1,
+                staggerChildren: 0.05,
             },
         },
         hidden: {

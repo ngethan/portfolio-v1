@@ -41,7 +41,7 @@ const Navbar = () => {
         visible: {
             opacity: 1,
             transition: {
-                delay: 0.09,
+                delay: 0.1,
                 when: "beforeChildren",
                 staggerChildren: 0.05,
             },

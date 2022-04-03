@@ -21,7 +21,7 @@ const Work = () => {
             transition: {
                 delay: 0.09,
                 when: "beforeChildren",
-                staggerChildren: 0.1,
+                staggerChildren: 0.05,
             },
         },
         hidden: {
@@ -87,13 +87,15 @@ const Work = () => {
             </motion.div>
 
             <div className="hidden md:flex h-screen">
-                <ul className="flex flex-col justify-left items-left w-[160px] h-full text-[13px] font-code float-left">
+                <motion.ul
+                    className="flex flex-col justify-left items-left w-[160px] h-full text-[13px] font-code float-left"
+                    variants={itemX}
+                >
                     <motion.li
                         id="tcs"
                         className="flex items-center text-left w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 active-work"
                         data-work="tcs"
                         onClick={handleClick}
-                        variants={itemX}
                     >
                         theCoderSchool
                     </motion.li>
@@ -102,7 +104,6 @@ const Work = () => {
                         className="flex items-center text-left w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
-                        variants={itemX}
                     >
                         Muddy Paws Rescue
                     </motion.li>
@@ -111,20 +112,18 @@ const Work = () => {
                         className="flex items-center text-left w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
-                        variants={itemX}
                     >
                         NYDEO
                     </motion.li>
                     <motion.div
                         id="selected-indicator"
                         className="relative bottom-[126px] w-[2px] h-[42px] border-l-[2px] border-red-500 transition-top duration-300"
-                        variants={itemX}
                     ></motion.div>
-                </ul>
+                </motion.ul>
 
                 {inView ? (
                     <Delayed delay={500}>
-                        <WorkInfo work={work} variants={itemY} />
+                        <WorkInfo work={work} />
                     </Delayed>
                 ) : null}
             </div>
