@@ -123,7 +123,7 @@ const Work = () => {
                 </ul>
 
                 {inView ? (
-                    <Delayed>
+                    <Delayed delay={500}>
                         <WorkInfo work={work} variants={itemY} />
                     </Delayed>
                 ) : null}

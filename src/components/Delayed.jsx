@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const Delayed = ({ children, waitBeforeShow = 500 }) => {
-    const [isShown, setIsShown] = useState(false);
+const Delayed = ({ children, delay }) => {
+    const [shown, setShown] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setIsShown(true);
-        }, waitBeforeShow);
+            setShown(true);
+        }, delay);
         return () => clearTimeout(timer);
-    }, [waitBeforeShow]);
+    }, [delay]);
 
-    return isShown ? children : null;
+    return shown ? children : null;
 };
 
 export default Delayed;
