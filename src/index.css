@@ -6,7 +6,11 @@
 
 @layer base {
     * {
-        cursor: none;
+        cursor: none !important;
+    }
+
+    html {
+        scroll-behavior: smooth;
     }
 
     *::-webkit-scrollbar {

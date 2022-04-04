@@ -54,23 +54,38 @@ const Work = () => {
 
     const handleClick = (e) => {
         setWork(e.target.dataset.work);
-        let prevActive = document.getElementsByClassName("active-work")[0];
-        prevActive?.classList.add("inactive-work");
-        prevActive?.classList.remove("active-work");
-        e.target.classList.add("active-work");
-        e.target.classList.remove("inactive-work");
 
-        if (e.target.dataset.work === "tcs")
-            sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "126px"));
-        if (e.target.dataset.work === "mpr")
-            sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "84px"));
-        else if (e.target.dataset.work === "nydeo")
-            sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "42px"));
+        if (window.screen.width < 768) {
+            let prevActive = document.getElementsByClassName("active-work")[1];
+            prevActive?.classList.add("inactive-work");
+            prevActive?.classList.remove("active-work");
+            e.target.classList.add("active-work");
+            e.target.classList.remove("inactive-work");
+            if (e.target.dataset.work === "tcs-md")
+                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.right = "480px"));
+            if (e.target.dataset.work === "mpr-md")
+                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.right = "320px"));
+            else if (e.target.dataset.work === "nydeo-md")
+                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.right = "160px"));
+        } else {
+            let prevActive = document.getElementsByClassName("active-work")[0];
+            prevActive?.classList.add("inactive-work");
+            prevActive?.classList.remove("active-work");
+            e.target.classList.add("active-work");
+            e.target.classList.remove("inactive-work");
+            if (e.target.dataset.work === "tcs")
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "126px"));
+            if (e.target.dataset.work === "mpr")
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "84px"));
+            else if (e.target.dataset.work === "nydeo")
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "42px"));
+        }
     };
 
     return (
         <motion.div
-            className="py-[100px] bg-gray-800 text-gray-200 w-full max-w-[1000px] mx-auto px-4 flex flex-col"
+            id="work"
+            className="py-[100px] bg-gray-800 text-gray-200 w-full max-w-[1000px] mx-auto h-screen px-4 flex flex-col"
             initial="hidden"
             animate={controls}
             variants={list}
@@ -86,14 +101,14 @@ const Work = () => {
                 })}
             </motion.div>
 
-            <div className="hidden md:flex h-screen">
+            <div className="hidden md:flex">
                 <motion.ul
-                    className="flex flex-col justify-left items-left w-[160px] h-full text-[13px] font-code float-left"
+                    className="flex flex-col justify-left items-left w-[160px] text-[13px] font-code float-left"
                     variants={itemX}
                 >
                     <motion.li
                         id="tcs"
-                        className="flex items-center text-left w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 active-work"
+                        className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 active-work"
                         data-work="tcs"
                         onClick={handleClick}
                     >
@@ -101,7 +116,7 @@ const Work = () => {
                     </motion.li>
                     <motion.li
                         id="mpr"
-                        className="flex items-center text-left w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
                     >
@@ -109,7 +124,7 @@ const Work = () => {
                     </motion.li>
                     <motion.li
                         id="nydeo"
-                        className="flex items-center text-left w-[160px] h-[42px] duration-300 cursor-none border-l-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
@@ -120,7 +135,6 @@ const Work = () => {
                         className="relative bottom-[126px] w-[2px] h-[42px] border-l-[2px] border-red-500 transition-top duration-300"
                     ></motion.div>
                 </motion.ul>
-
                 {inView ? (
                     <Delayed delay={500}>
                         <WorkInfo work={work} />
@@ -129,67 +143,42 @@ const Work = () => {
             </div>
 
             <div className="flex flex-col md:hidden">
-                <ul className="flex flex-row justify-center h-full text-[13px] mb-[5px] font-code">
-                    <motion.li
-                        id="tcs"
-                        className="flex items-center justify-center w-[160px] h-[42px] duration-300 cursor-none border-b-[2px] border-gray-600 py-4 active-work"
+                {/* width is weird... try wrapping content and setting width to 480px or just centering it*/}
+                <motion.ul className="flex flex-row h-[42px] text-[13px] font-code mb-[5px]" variants={itemY}>
+                    <li
+                        id="tcs-md"
+                        className="flex items-center justify-center w-[160px] duration-300 border-b-[2px] border-gray-600 py-4 active-work"
                         data-work="tcs"
                         onClick={handleClick}
-                        variants={itemX}
                     >
-                        <button className="cursor-none">theCoderSchool</button>
-                    </motion.li>
-                    <motion.li
-                        id="mpr"
-                        className="flex items-center justify-center w-[160px] h-[42px] duration-300 cursor-none border-b-[2px] border-gray-600 py-4 inactive-work"
+                        theCoderSchool
+                    </li>
+                    <li
+                        id="mpr-md"
+                        className="flex items-center justify-center w-[160px] duration-300 border-b-[2px] border-gray-600 py-4 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
-                        variants={itemX}
                     >
-                        <button className="cursor-none">Muddy Paws Rescue</button>
-                    </motion.li>
-                    <motion.li
-                        id="nydeo"
-                        className="flex items-center justify-center w-[160px] h-[42px] duration-300 cursor-none border-b-[2px] border-gray-600 py-4 inactive-work"
+                        Muddy Paws Rescue
+                    </li>
+                    <li
+                        id="nydeo-md"
+                        className="flex items-center justify-center w-[160px] duration-300 border-b-[2px] border-gray-600 py-4 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
-                        variants={itemX}
                     >
-                        <button className="cursor-none">NYDEO</button>
-                    </motion.li>
+                        NYDEO
+                    </li>
                     <div
-                        id="selected-indicator"
-                        className="relative bottom-[126px] w-[160px] h-[2px] border-b-[2px] border-red-500 transition-top duration-300"
+                        id="selected-indicator-md"
+                        className="relative top-[40px] right-[480px] w-[160px] h-[2px] border-b-[2px] border-red-500 transition-top duration-300 z-0"
                     ></div>
-                </ul>
-
-                <div className="ml-[25px]">
-                    <motion.div variants={itemY}>
-                        <p id="title" className="inline text-[20px] text-gray-100 font-bold mb-1">
-                            Code Coach
-                        </p>
-                        <p className="inline text-[20px] text-red-500 font-bold"> @ </p>
-                        <a
-                            id="name"
-                            className="inline text-[20px] text-red-500 font-bold hover-animation-dark"
-                            href="https://thecoderschool.com/"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            theCoderSchool
-                        </a>
-                    </motion.div>
-                    <motion.p id="duration" className="font-code text-[17px] text-gray-200 mb-4" variants={itemY}>
-                        September 2021 - Present
-                    </motion.p>
-                    <motion.p id="description" className="text-gray-200" variants={itemY}>
-                        During my time as a Code Coach at theCoderSchool, I facilitated learning amongst beginner and
-                        intermediate programmers. I taught a variety of languages from Scratch, Python, JavaScript, HTML, and
-                        CSS. My responsibilities included promoting a positive and productive work environment, devising fun
-                        and educational projects for students to gain first-hand experience in their respective areas of
-                        study, and helping to maintain the physical class environment.
-                    </motion.p>
-                </div>
+                </motion.ul>
+                {inView ? (
+                    <Delayed delay={500}>
+                        <WorkInfo work={work} />
+                    </Delayed>
+                ) : null}
             </div>
         </motion.div>
     );

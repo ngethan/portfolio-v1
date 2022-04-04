@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Home = (data) => {
+const Home = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView();
     useEffect(() => {
@@ -36,6 +36,10 @@ const Home = (data) => {
         },
     };
 
+    const handleViewWork = () => {
+        document.getElementById("work").scrollIntoView();
+    };
+
     return (
         <motion.div
             name="home"
@@ -59,7 +63,7 @@ const Home = (data) => {
             <motion.p className="text-gray-200 my-7 max-w-[500px] text-lg" variants={item}>
                 I'm a software engineer specializing in building web and desktop applications. Currently, I'm teaching at{" "}
                 <a
-                    className={!data ? "hidden" : "text-red-200 hover-animation-light font-code"}
+                    className="text-red-200 hover-animation-light font-code"
                     href="https://www.thecoderschool.com/"
                     target="_blank"
                     rel="noreferrer"
@@ -79,7 +83,10 @@ const Home = (data) => {
             </motion.p>
 
             <motion.div variants={item}>
-                <button className="text-red-400 border-red-400 font-code text-lg border-2 rounded px-6 py-3 my-2 flex items-center duration-300 hover:bg-red-300/[.3] cursor-none">
+                <button
+                    className="text-red-400 border-red-400 font-code text-lg border-2 rounded px-6 py-3 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
+                    onClick={handleViewWork}
+                >
                     View work
                 </button>
             </motion.div>

@@ -85,22 +85,22 @@ const Navbar = () => {
             </motion.div>
 
             <ul className="hidden md:flex font-code text-lg">
-                <motion.li variants={item} className="cursor-none">
+                <motion.li variants={item}>
                     <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
                         About
                     </a>
                 </motion.li>
-                <motion.li variants={item} className="cursor-none">
+                <motion.li variants={item}>
                     <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
                         Skills
                     </a>
                 </motion.li>
-                <motion.li variants={item} className="cursor-none">
+                <motion.li variants={item}>
                     <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
                         Work
                     </a>
                 </motion.li>
-                <motion.li variants={item} className="cursor-none">
+                <motion.li variants={item}>
                     <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
                         Contact
                     </a>
