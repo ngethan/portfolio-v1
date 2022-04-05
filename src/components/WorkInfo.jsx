@@ -67,7 +67,7 @@ const WorkInfo = ({ work }) => {
                 <a
                     id="name"
                     className="inline text-[20px] text-red-500 font-bold hover-animation-dark"
-                    href="https://thecoderschool.com/"
+                    href={data.url}
                     target="_blank"
                     rel="noreferrer"
                 >
