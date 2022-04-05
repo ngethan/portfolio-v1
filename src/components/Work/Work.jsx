@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import WorkInfo from "./WorkInfo";
-import Delayed from "./Delayed";
+import Delayed from "../Delayed";
 
 const Work = () => {
     const [work, setWork] = useState("tcs");
 
+    const [inViewFinal, setInViewFinal] = useState(false);
     const controls = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.5 });
+    const [ref, inView] = useInView();
     useEffect(() => {
         if (inView) {
+            setInViewFinal(true);
             controls.start("visible");
         }
     }, [controls, inView]);
@@ -55,18 +57,18 @@ const Work = () => {
     const handleClick = (e) => {
         setWork(e.target.dataset.work);
 
-        if (window.screen.width < 768) {
+        if (window.innerWidth < 768) {
             let prevActive = document.getElementsByClassName("active-work")[1];
             prevActive?.classList.add("inactive-work");
             prevActive?.classList.remove("active-work");
             e.target.classList.add("active-work");
             e.target.classList.remove("inactive-work");
-            if (e.target.dataset.work === "tcs-md")
-                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.right = "480px"));
-            if (e.target.dataset.work === "mpr-md")
-                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.right = "320px"));
-            else if (e.target.dataset.work === "nydeo-md")
-                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.right = "160px"));
+            if (e.target.dataset.work === "tcs")
+                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.marginLeft = "-480px"));
+            if (e.target.dataset.work === "mpr")
+                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.marginLeft = "-320px"));
+            else if (e.target.dataset.work === "nydeo")
+                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.marginLeft = "-160px"));
         } else {
             let prevActive = document.getElementsByClassName("active-work")[0];
             prevActive?.classList.add("inactive-work");
@@ -74,11 +76,11 @@ const Work = () => {
             e.target.classList.add("active-work");
             e.target.classList.remove("inactive-work");
             if (e.target.dataset.work === "tcs")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "126px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-126px"));
             if (e.target.dataset.work === "mpr")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "84px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-84px"));
             else if (e.target.dataset.work === "nydeo")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.bottom = "42px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-42px"));
         }
     };
 
@@ -106,36 +108,37 @@ const Work = () => {
                     className="flex flex-col justify-left items-left w-[160px] text-[13px] font-code float-left"
                     variants={itemX}
                 >
-                    <motion.li
+                    <li
                         id="tcs"
                         className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 active-work"
                         data-work="tcs"
                         onClick={handleClick}
                     >
                         theCoderSchool
-                    </motion.li>
-                    <motion.li
+                    </li>
+                    <li
                         id="mpr"
                         className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
                     >
                         Muddy Paws Rescue
-                    </motion.li>
-                    <motion.li
+                    </li>
+                    <li
                         id="nydeo"
                         className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
                         NYDEO
-                    </motion.li>
-                    <motion.div
+                    </li>
+                    <div
                         id="selected-indicator"
-                        className="relative bottom-[126px] w-[2px] h-[42px] border-l-[2px] border-red-500 transition-top duration-300"
-                    ></motion.div>
+                        className="mt-[-126px] w-[2px] h-[42px] border-l-[2px] border-red-500 duration-300"
+                    ></div>
                 </motion.ul>
-                {inView ? (
+
+                {inViewFinal ? (
                     <Delayed delay={500}>
                         <WorkInfo work={work} />
                     </Delayed>
@@ -171,10 +174,10 @@ const Work = () => {
                     </li>
                     <div
                         id="selected-indicator-md"
-                        className="relative top-[40px] right-[480px] w-[160px] h-[2px] border-b-[2px] border-red-500 transition-top duration-300 z-0"
+                        className="ml-[-480px] mt-[40px] w-[160px] h-[2px] border-b-[2px] border-red-500 duration-300"
                     ></div>
                 </motion.ul>
-                {inView ? (
+                {inViewFinal ? (
                     <Delayed delay={500}>
                         <WorkInfo work={work} />
                     </Delayed>

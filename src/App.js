@@ -4,21 +4,21 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Cursor from "./components/Cursor";
 import Side from "./components/Side";
-import Work from "./components/Work";
+import Work from "./components/Work/Work";
+import Contact from "./components/Contact/Contact";
 
 function App() {
-    const workRef = useRef();
-    function handleViewWork() {
-        workRef.current.scrollIntoView({ behavior: "smooth" });
-    }
     return (
         <div>
             <Navbar />
-            <Cursor />
-            <Home viewWork={handleViewWork} />
+            <Home />
             <About />
-            <Work ref={workRef} />
+            <Work />
+            <Contact />
+
             <Side />
+
+            <Cursor />
         </div>
     );
 }
