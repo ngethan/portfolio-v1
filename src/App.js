@@ -1,10 +1,10 @@
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
-import Cursor from "./components/Cursor";
-import Side from "./components/Side";
 import Work from "./components/Work/Work";
 import Contact from "./components/Contact/Contact";
+import Side from "./components/Side";
+import Cursor from "./components/Cursor";
 
 function App() {
     return (

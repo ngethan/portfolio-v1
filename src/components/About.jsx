@@ -27,7 +27,7 @@ const About = () => {
         },
     };
 
-    const item = {
+    const itemY = {
         hidden: { y: -10, opacity: 0 },
         visible: {
             y: 0,
@@ -37,15 +37,22 @@ const About = () => {
 
     return (
         <motion.div
-            className="py-[100px] bg-gray-800 text-gray-200 w-full max-w-[1000px] mx-auto px-4 flex flex-col"
+            id="about"
+            className="py-[100px] bg-gray-800 text-gray-200 w-full max-w-[1075px] mx-auto flex flex-col px-4"
             initial="hidden"
             animate={controls}
             variants={list}
             ref={ref}
         >
-            <motion.p className="text-4xl text-gray-100 font-bold inline mb-[40px]" variants={item}>
-                About me
-            </motion.p>
+            <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
+                {["A", "b", "o", "u", "t"].map((letter) => {
+                    return (
+                        <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+                            {letter}
+                        </h1>
+                    );
+                })}
+            </motion.div>
         </motion.div>
     );
 };

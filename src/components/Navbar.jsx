@@ -67,6 +67,12 @@ const Navbar = () => {
         closed: { opacity: 0, x: "-100%" },
     };
 
+    const handleViewSection = (e) => {
+        console.log(e.target.dataset.section);
+        console.log(document.getElementById(e.target.dataset.section));
+        document.getElementById(e.target.dataset.section).scrollIntoView();
+    };
+
     return (
         <motion.div
             id="navbar"
@@ -84,26 +90,42 @@ const Navbar = () => {
                 <h1 className="text-5xl text-red-500 font-bold">EN</h1>
             </motion.div>
 
-            <ul className="hidden md:flex font-code text-lg">
+            <ul className="hidden md:flex font-code text-lg items-center">
                 <motion.li variants={item}>
-                    <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
+                    <h1
+                        className="duration-300 hover-animation-dark hover:text-red-400"
+                        data-section="about"
+                        onClick={handleViewSection}
+                    >
                         About
-                    </a>
+                    </h1>
                 </motion.li>
                 <motion.li variants={item}>
-                    <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
+                    <h1
+                        className="duration-300 hover-animation-dark hover:text-red-400"
+                        data-section="skills"
+                        onClick={handleViewSection}
+                    >
                         Skills
-                    </a>
+                    </h1>
                 </motion.li>
                 <motion.li variants={item}>
-                    <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
+                    <h1
+                        className="duration-300 hover-animation-dark hover:text-red-400"
+                        data-section="work"
+                        onClick={handleViewSection}
+                    >
                         Work
-                    </a>
+                    </h1>
                 </motion.li>
                 <motion.li variants={item}>
-                    <a className="duration-300 hover-animation-dark hover:text-red-400" href="https://ethanng.dev">
+                    <button
+                        className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-4 py-2 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
+                        data-section="contact"
+                        onClick={handleViewSection}
+                    >
                         Contact
-                    </a>
+                    </button>
                 </motion.li>
             </ul>
 

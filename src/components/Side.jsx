@@ -71,7 +71,7 @@ const Side = () => {
                     </a>
                 </motion.li>
 
-                <motion.div className="after:vertical-line" variants={item}></motion.div>
+                <motion.div className="after:vertical-line after:w-[1px] after:left-[47%]" variants={item}></motion.div>
             </ul>
         </motion.div>
     );

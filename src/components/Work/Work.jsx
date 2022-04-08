@@ -87,13 +87,13 @@ const Work = () => {
     return (
         <motion.div
             id="work"
-            className="py-[100px] bg-gray-800 text-gray-200 w-full max-w-[1000px] mx-auto h-screen px-4 flex flex-col"
+            className="py-[100px] bg-gray-800 text-gray-200 w-full h-[500px] max-w-[1075px] mx-auto px-4 flex flex-col"
             initial="hidden"
             animate={controls}
             variants={list}
             ref={ref}
         >
-            <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold" variants={itemY}>
+            <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
                 {["M", "y", "\xa0", "w", "o", "r", "k"].map((letter) => {
                     return (
                         <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
@@ -146,7 +146,6 @@ const Work = () => {
             </div>
 
             <div className="flex flex-col md:hidden">
-                {/* width is weird... try wrapping content and setting width to 480px or just centering it*/}
                 <motion.ul className="flex flex-row h-[42px] text-[13px] font-code mb-[5px]" variants={itemY}>
                     <li
                         id="tcs-md"
@@ -158,7 +157,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr-md"
-                        className="flex items-center justify-center w-[160px] duration-300 border-b-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center justify-center duration-300 border-b-[2px] border-gray-600 py-4 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
                     >
@@ -166,7 +165,7 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo-md"
-                        className="flex items-center justify-center w-[160px] duration-300 border-b-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center justify-center duration-300 border-b-[2px] border-gray-600 py-4 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
@@ -174,12 +173,12 @@ const Work = () => {
                     </li>
                     <div
                         id="selected-indicator-md"
-                        className="ml-[-480px] mt-[40px] w-[160px] h-[2px] border-b-[2px] border-red-500 duration-300"
+                        className="ml-[-480px] mt-[40px] h-[2px] border-b-[2px] border-red-500 duration-300"
                     ></div>
                 </motion.ul>
                 {inViewFinal ? (
                     <Delayed delay={500}>
-                        <WorkInfo work={work} />
+                        <WorkInfo work={work} md={true} />
                     </Delayed>
                 ) : null}
             </div>

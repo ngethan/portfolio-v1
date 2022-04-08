@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const WorkInfo = ({ work }) => {
+const WorkInfo = ({ work, md }) => {
     const workData = {
         tcs: {
             name: "theCoderSchool",
@@ -58,7 +58,13 @@ const WorkInfo = ({ work }) => {
     else if (work === "nydeo") data = workData.nydeo;
 
     return (
-        <motion.div className="ml-[25px] float-right" initial="hidden" animate="visible" key={work} variants={list}>
+        <motion.div
+            className={!md ? "ml-[25px] float-right" : "ml-4 float-right"}
+            initial="hidden"
+            animate="visible"
+            key={work}
+            variants={list}
+        >
             <motion.div variants={itemY}>
                 <motion.p id="title" className="inline text-[20px] text-gray-100 font-bold mb-1">
                     {data.title}
