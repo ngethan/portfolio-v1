@@ -146,7 +146,7 @@ const Work = () => {
             </div>
 
             <div className="flex flex-col md:hidden">
-                <motion.ul className="flex flex-row h-[42px] text-[13px] font-code mb-[5px]" variants={itemY}>
+                <motion.ul className="flex flex-row h-[42px] text-[13px] font-code mb-[5px] overflow-y-auto" variants={itemY}>
                     <li
                         id="tcs-md"
                         className="flex items-center justify-center w-[160px] duration-300 border-b-[2px] border-gray-600 py-4 active-work"
