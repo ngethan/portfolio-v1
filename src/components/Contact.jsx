@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const Contact = () => {
     const controls = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.5 });
+    const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
         if (inView) {
             controls.start("visible");
@@ -96,7 +96,7 @@ const Contact = () => {
     return (
         <motion.div
             id="contact"
-            className="py-[100px] bg-gray-800 text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
+            className="py-[100px] text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
             initial="hidden"
             animate={controls}
             variants={list}
@@ -105,7 +105,7 @@ const Contact = () => {
             <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
                 {["C", "o", "n", "t", "a", "c", "t"].map((letter) => {
                     return (
-                        <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+                        <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500">
                             {letter}
                         </h1>
                     );
@@ -146,7 +146,7 @@ const Contact = () => {
                 </motion.div>
 
                 <motion.button
-                    className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-6 py-3 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
+                    className="text-red-400 border-red-400 font-code text-lg border-2 rounded-3xl px-4 py-2 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
                     type="submit"
                     variants={itemY}
                 >

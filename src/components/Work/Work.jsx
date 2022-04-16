@@ -9,7 +9,7 @@ const Work = () => {
 
     const [inViewFinal, setInViewFinal] = useState(false);
     const controls = useAnimation();
-    const [ref, inView] = useInView();
+    const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
         if (inView) {
             setInViewFinal(true);
@@ -87,16 +87,16 @@ const Work = () => {
     return (
         <motion.div
             id="work"
-            className="py-[100px] bg-gray-800 text-gray-200 w-full h-[500px] max-w-[1075px] mx-auto px-4 flex flex-col"
+            className="py-[100px] text-gray-200 w-full h-[500px] max-w-[750px] mx-auto px-4 flex flex-col"
             initial="hidden"
             animate={controls}
             variants={list}
             ref={ref}
         >
-            <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
+            <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold" variants={itemY}>
                 {["M", "y", "\xa0", "w", "o", "r", "k"].map((letter) => {
                     return (
-                        <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+                        <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500">
                             {letter}
                         </h1>
                     );

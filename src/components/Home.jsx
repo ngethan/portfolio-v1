@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 const Home = () => {
     const controls = useAnimation();
-    const [ref, inView] = useInView();
+    const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
         if (inView) {
             controls.start("visible");
@@ -42,8 +42,9 @@ const Home = () => {
 
     return (
         <motion.div
+            id="home"
             name="home"
-            className="w-full h-screen bg-gray-800 max-w-[1075px] mx-auto px-8 flex flex-col justify-center"
+            className="w-full h-screen max-w-[1075px] mx-auto px-8 flex flex-col justify-center -z-[1]"
             initial="hidden"
             animate={controls}
             variants={list}
@@ -84,7 +85,7 @@ const Home = () => {
 
             <motion.div variants={item}>
                 <button
-                    className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-6 py-3 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
+                    className="text-red-400 border-red-400 font-code text-lg border-2 rounded-3xl px-5 py-3 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
                     onClick={handleViewWork}
                 >
                     View work

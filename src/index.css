@@ -26,7 +26,7 @@
 
     .cursor-dot,
     .cursor-dot-outline {
-        z-index: 1000;
+        z-index: 999;
         margin: auto;
         justify-content: center;
         pointer-events: none;
@@ -130,51 +130,4 @@
     .input:focus {
         background-size: 0 0.1em, 100% 0.1em;
     }
-
-    /* 
-    .input {
-        border: 0;
-        padding: 4px 0;
-        border-bottom: 1px solid #ccc;
-        background-color: transparent;
-    }
-
-    .input ~ .focus-border {
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: #3399ff;
-        transition: 0.4s;
-    }
-    .input:focus ~ .focus-border,
-    .has-content.input ~ .focus-border {
-        width: 100%;
-        transition: 0.4s;
-    }
-    .input ~ label {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        top: 9px;
-        color: #aaa;
-        transition: 0.3s;
-        z-index: -1;
-        letter-spacing: 0.5px;
-    }
-    .input:focus ~ label,
-    .has-content.input ~ label {
-        top: -16px;
-        font-size: 12px;
-        color: #3399ff;
-        transition: 0.3s;
-    }
-
-    input[type="text"] {
-        font: 15px/24px "Lato", Arial, sans-serif;
-        color: #333;
-        width: 100%;
-        box-sizing: border-box;
-        letter-spacing: 1px;
-    } */
 }

@@ -30,7 +30,7 @@ const Navbar = () => {
     });
 
     const controls = useAnimation();
-    const [ref, inView] = useInView();
+    const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
         if (inView) {
             controls.start("visible");
@@ -68,8 +68,6 @@ const Navbar = () => {
     };
 
     const handleViewSection = (e) => {
-        console.log(e.target.dataset.section);
-        console.log(document.getElementById(e.target.dataset.section));
         document.getElementById(e.target.dataset.section).scrollIntoView();
     };
 
@@ -91,6 +89,15 @@ const Navbar = () => {
             </motion.div>
 
             <ul className="hidden md:flex font-code text-lg items-center">
+                <motion.li variants={item}>
+                    <h1
+                        className="duration-300 hover-animation-dark hover:text-red-400"
+                        data-section="home"
+                        onClick={handleViewSection}
+                    >
+                        Home
+                    </h1>
+                </motion.li>
                 <motion.li variants={item}>
                     <h1
                         className="duration-300 hover-animation-dark hover:text-red-400"
@@ -120,7 +127,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                     <button
-                        className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-4 py-2 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
+                        className="text-red-400 border-red-400 font-code text-lg border-2 rounded-3xl px-4 py-1 my-1 flex items-center duration-300 hover:bg-red-300/[.3]"
                         data-section="contact"
                         onClick={handleViewSection}
                     >
