@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useRef, useState, useMemo, useEffect, Suspense } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import {
-    FaReact,
-    FaJava,
-    FaPython,
-    FaCss3,
-    FaSquarespace,
-    FaAws,
-    FaNodeJs,
-    FaNpm,
-    FaYarn,
-    FaWordpressSimple,
-} from "react-icons/fa";
-import { DiMongodb, DiHtml5, DiGit, DiHeroku } from "react-icons/di";
-import { SiJavascript, SiTypescript, SiTailwindcss, SiNetlify } from "react-icons/si";
+// import {
+//     FaReact,
+//     FaJava,
+//     FaPython,
+//     FaCss3,
+//     FaSquarespace,
+//     FaAws,
+//     FaNodeJs,
+//     FaNpm,
+//     FaYarn,
+//     FaWordpressSimple,
+// } from "react-icons/fa";
+// import { DiMongodb, DiHtml5, DiGit, DiHeroku } from "react-icons/di";
+// import { SiJavascript, SiTypescript, SiTailwindcss, SiNetlify } from "react-icons/si";
 
 const Skills = () => {
     const controls = useAnimation();
@@ -50,8 +50,8 @@ const Skills = () => {
     };
 
     return (
-        <motion.div className="text-gray-100" initial="hidden" animate={controls} variants={list} ref={ref}>
-            <motion.div variants={itemY}>
+        <motion.div className="text-gray-100 h-screen" initial="hidden" animate={controls} variants={list} ref={ref}>
+            {/* <motion.div variants={itemY}>
                 FRAMEWORKS
                 <FaReact />
                 <SiTailwindcss />
@@ -77,7 +77,7 @@ const Skills = () => {
                 <SiNetlify />
                 <DiHeroku />
                 <FaAws />
-            </motion.div>
+            </motion.div> */}
         </motion.div>
     );
 };

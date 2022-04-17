@@ -77,7 +77,7 @@ const Navbar = () => {
             className={
                 top
                     ? "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100"
-                    : "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 box-shadow text-gray-100"
+                    : "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100"
             }
             initial="hidden"
             animate={controls}
@@ -127,7 +127,7 @@ const Navbar = () => {
                 </motion.li>
                 <motion.li variants={item}>
                     <button
-                        className="text-red-400 border-red-400 font-code text-lg border-2 rounded-3xl px-4 py-1 my-1 flex items-center duration-300 hover:bg-red-300/[.3]"
+                        className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-4 py-1 my-1 flex items-center duration-300 hover:bg-red-300/[.3]"
                         data-section="contact"
                         onClick={handleViewSection}
                     >
@@ -144,7 +144,7 @@ const Navbar = () => {
                 className={
                     !nav
                         ? "hidden"
-                        : "absolute top-0 left-0 w-full h-screen bg-gray-800 flex flex-col justify-center items-center font-code text-lg"
+                        : "fixed top-0 left-0 w-full h-full overflow-y-hidden bg-gray-800 flex flex-col justify-center items-center font-code text-lg"
                 }
                 variants={variants}
             >

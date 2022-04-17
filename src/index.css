@@ -26,7 +26,6 @@
 
     .cursor-dot,
     .cursor-dot-outline {
-        z-index: 999;
         margin: auto;
         justify-content: center;
         pointer-events: none;
@@ -95,6 +94,20 @@
     }
 
     .inactive-work:hover {
+        background-color: rgba(236, 90, 101, 0.1);
+        color: theme("colors.red.500");
+    }
+
+    .active-work-md {
+        background-color: rgba(236, 90, 101, 0.1);
+        border-color: theme("colors.red.500");
+        color: theme("colors.red.500");
+    }
+
+    .inactive-work-md {
+        border-color: theme("colors.gray.600");
+    }
+    .inactive-work-md:hover {
         background-color: rgba(236, 90, 101, 0.1);
         color: theme("colors.red.500");
     }

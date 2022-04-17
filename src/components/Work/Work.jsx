@@ -58,17 +58,11 @@ const Work = () => {
         setWork(e.target.dataset.work);
 
         if (window.innerWidth < 768) {
-            let prevActive = document.getElementsByClassName("active-work")[1];
-            prevActive?.classList.add("inactive-work");
-            prevActive?.classList.remove("active-work");
-            e.target.classList.add("active-work");
-            e.target.classList.remove("inactive-work");
-            if (e.target.dataset.work === "tcs")
-                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.marginLeft = "-480px"));
-            if (e.target.dataset.work === "mpr")
-                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.marginLeft = "-320px"));
-            else if (e.target.dataset.work === "nydeo")
-                sleep(100).then(() => (document.getElementById("selected-indicator-md").style.marginLeft = "-160px"));
+            let prevActive = document.getElementsByClassName("active-work-md")[0];
+            prevActive?.classList.add("inactive-work-md");
+            prevActive?.classList.remove("active-work-md");
+            e.target.classList.add("active-work-md");
+            e.target.classList.remove("inactive-work-md");
         } else {
             let prevActive = document.getElementsByClassName("active-work")[0];
             prevActive?.classList.add("inactive-work");
@@ -105,7 +99,7 @@ const Work = () => {
 
             <div className="hidden md:flex">
                 <motion.ul
-                    className="flex flex-col justify-left items-left w-[160px] text-[13px] font-code float-left"
+                    className="flex flex-col justify-left items-left text-[13px] font-code float-left"
                     variants={itemX}
                 >
                     <li
@@ -134,7 +128,7 @@ const Work = () => {
                     </li>
                     <div
                         id="selected-indicator"
-                        className="mt-[-126px] w-[2px] h-[42px] border-l-[2px] border-red-500 duration-300"
+                        className="relative top-0 mt-[-126px] w-[2px] h-[42px] border-l-[2px] border-red-500 duration-300"
                     ></div>
                 </motion.ul>
 
@@ -146,10 +140,13 @@ const Work = () => {
             </div>
 
             <div className="flex flex-col md:hidden">
-                <motion.ul className="flex flex-row h-[42px] text-[13px] font-code mb-[5px] overflow-y-auto" variants={itemY}>
+                <motion.ul
+                    className="flex flex-row h-[42px] text-[13px] font-code mb-[5px] overflow-x-auto overflow-y-hidden"
+                    variants={itemY}
+                >
                     <li
                         id="tcs-md"
-                        className="flex items-center justify-center w-[160px] duration-300 border-b-[2px] border-gray-600 py-4 active-work"
+                        className="flex items-center justify-center w-[154px] duration-300 border-b-[2px] py-4 active-work-md"
                         data-work="tcs"
                         onClick={handleClick}
                     >
@@ -157,7 +154,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr-md"
-                        className="flex items-center justify-center duration-300 border-b-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center justify-center w-[154px] duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="mpr"
                         onClick={handleClick}
                     >
@@ -165,16 +162,13 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo-md"
-                        className="flex items-center justify-center duration-300 border-b-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center justify-center w-[154px] duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
                         NYDEO
                     </li>
-                    <div
-                        id="selected-indicator-md"
-                        className="ml-[-480px] mt-[40px] h-[2px] border-b-[2px] border-red-500 duration-300"
-                    ></div>
+                    <div className="mr-[-480px] mt-[-42px] w-[154px] h-[2px] border-l-[2px] border-red-500 duration-300"></div>
                 </motion.ul>
                 {inViewFinal ? (
                     <Delayed delay={500}>

@@ -65,7 +65,7 @@ const WorkInfo = ({ work, md }) => {
 
     return (
         <motion.div
-            className={!md ? "ml-[25px] float-right" : "ml-4 float-right"}
+            className={!md ? "ml-[25px] float-right -z-[1]" : "ml-4 float-right -z-[1]"}
             initial="hidden"
             animate="visible"
             key={work}
