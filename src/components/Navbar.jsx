@@ -69,6 +69,9 @@ const Navbar = () => {
 
     const handleViewSection = (e) => {
         document.getElementById(e.target.dataset.section).scrollIntoView();
+        if (window.innerWidth < 768) {
+            setNav(false);
+        }
     };
 
     return (
@@ -76,8 +79,8 @@ const Navbar = () => {
             id="navbar"
             className={
                 top
-                    ? "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100"
-                    : "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100"
+                    ? "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100 z-[999]"
+                    : "duration-300 fixed w-full h-[50px] flex justify-between items-center px-[50px] py-[40px] bg-gray-800 text-gray-100 z-[999]"
             }
             initial="hidden"
             animate={controls}
@@ -136,7 +139,7 @@ const Navbar = () => {
                 </motion.li>
             </ul>
 
-            <div className="md:hidden z-10" onClick={handleClick}>
+            <div className="md:hidden z-[1000]" onClick={handleClick}>
                 <Hamburger toggled={nav} toggle={setNav} size={25} />
             </div>
 
@@ -144,21 +147,45 @@ const Navbar = () => {
                 className={
                     !nav
                         ? "hidden"
-                        : "fixed top-0 left-0 w-full h-full overflow-y-hidden bg-gray-800 flex flex-col justify-center items-center font-code text-lg"
+                        : "fixed top-0 left-0 w-full h-full overflow-y-hidden bg-gray-800 flex flex-col justify-center items-center font-code text-lg z-10"
                 }
                 variants={variants}
             >
                 <li>
-                    <p className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400">About</p>
+                    <p
+                        className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400"
+                        data-section="about"
+                        onClick={handleViewSection}
+                    >
+                        About
+                    </p>
                 </li>
                 <li>
-                    <p className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400">Skills</p>
+                    <p
+                        className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400"
+                        data-section="skills"
+                        onClick={handleViewSection}
+                    >
+                        Skills
+                    </p>
                 </li>
                 <li>
-                    <p className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400">Work</p>
+                    <p
+                        className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400"
+                        data-section="work"
+                        onClick={handleViewSection}
+                    >
+                        Work
+                    </p>
                 </li>
                 <li>
-                    <p className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400">Contact</p>
+                    <p
+                        className="py-6 text-4xl duration-300 hover-animation-dark hover:text-red-400"
+                        data-section="contact"
+                        onClick={handleViewSection}
+                    >
+                        Contact
+                    </p>
                 </li>
             </motion.ul>
         </motion.div>

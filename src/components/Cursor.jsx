@@ -139,7 +139,7 @@ const Cursor = () => {
             className={
                 /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
                     ? "hidden"
-                    : "relative top-0"
+                    : "relative top-0 z-[1000]"
             }
         >
             <div ref={dotOutline} className="cursor-dot-outline"></div>

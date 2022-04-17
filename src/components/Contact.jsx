@@ -112,7 +112,7 @@ const Contact = () => {
                 })}
             </motion.div>
             <form
-                className="font-code inline-flex flex-wrap justify-between w-full -z-[1]"
+                className="font-code inline-flex flex-wrap justify-between w-full"
                 action="https://public.herotofu.com/v1/dfbaa840-b763-11ec-b4fe-2b9cbf782176"
                 onSubmit={handleSubmit}
                 method="POST"
