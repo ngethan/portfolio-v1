@@ -15,7 +15,7 @@ const Stars = () => {
         return (
             <group rotation={[0, 0, Math.PI]}>
                 <Points ref={ref} positions={sphere} stride={3} frustumCulled={false} {...props}>
-                    <PointMaterial transparent color="#E8313F" size={0.005} sizeAttenuation={true} depthWrite={false} />
+                    <PointMaterial transparent color="#E8313F" size={0.003} sizeAttenuation={true} depthWrite={false} />
                 </Points>
             </group>
         );

@@ -3,9 +3,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Work from "./components/Work/Work";
 import Contact from "./components/Contact";
-import Side from "./components/Side";
 import Cursor from "./components/Cursor";
 import Stars from "./components/Stars";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
             <About />
             <Work />
             <Contact />
-            <Side />
+            <Footer />
             <Cursor />
         </div>
     );
