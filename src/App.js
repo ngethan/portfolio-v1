@@ -32,6 +32,8 @@ function App() {
                     property="og:description"
                     content="Ethan Ng is a software engineer who loves designing and building applications."
                 />
+                <meta name="google" content="notranslate" />
+                <meta http-equiv="Content-Language" content="en" />
                 <meta property="og:image" content="%PUBLIC_URL%/image.png" />
                 <meta name="twitter:creator" content="@intuitiveen" />
                 <meta property="twitter:card" content="summary_large_image" />
