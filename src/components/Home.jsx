@@ -44,7 +44,7 @@ const Home = () => {
         <motion.div
             id="home"
             name="home"
-            className="w-full h-screen max-w-[1075px] mx-auto px-8 flex flex-row items-center -z-[1]"
+            className="w-full h-screen max-w-[1075px] mx-auto px-4 flex flex-row items-center -z-[1]"
             initial="hidden"
             animate={controls}
             variants={list}

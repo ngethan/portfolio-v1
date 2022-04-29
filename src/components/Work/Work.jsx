@@ -101,12 +101,12 @@ const Work = () => {
 
             <div className="hidden md:flex">
                 <motion.ul
-                    className="flex flex-col justify-left items-left text-[13px] font-code float-left"
+                    className="flex flex-col justify-left items-left text-[15px] font-code float-left"
                     variants={itemX}
                 >
                     <li
                         id="tcs"
-                        className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 active-work"
+                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 active-work"
                         data-work="tcs"
                         onClick={handleClick}
                     >
@@ -114,7 +114,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr"
-                        className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
                     >
@@ -122,7 +122,7 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo"
-                        className="flex items-center text-left w-[160px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
@@ -143,12 +143,12 @@ const Work = () => {
 
             <div className="flex flex-col md:hidden">
                 <motion.ul
-                    className="flex flex-row h-[42px] text-[13px] font-code mb-[5px] overflow-x-auto overflow-y-hidden"
+                    className="flex flex-row h-[42px] text-[15px] font-code mb-[5px] overflow-x-auto overflow-y-hidden"
                     variants={itemY}
                 >
                     <li
                         id="tcs-md"
-                        className="flex items-center justify-center w-[154px] duration-300 border-b-[2px] py-4 active-work-md"
+                        className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 active-work-md"
                         data-work="tcs"
                         onClick={handleClick}
                     >
@@ -156,7 +156,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr-md"
-                        className="flex items-center justify-center w-[154px] duration-300 border-b-[2px] py-4 inactive-work-md"
+                        className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="mpr"
                         onClick={handleClick}
                     >
@@ -164,13 +164,13 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo-md"
-                        className="flex items-center justify-center w-[154px] duration-300 border-b-[2px] py-4 inactive-work-md"
+                        className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
                         NYDEO
                     </li>
-                    <div className="mr-[-480px] mt-[-42px] w-[154px] h-[2px] border-l-[2px] border-red-500 duration-300"></div>
+                    <div className="mr-[-480px] mt-[-42px] w-[175px] h-[2px] border-l-[2px] border-red-500 duration-300"></div>
                 </motion.ul>
                 {inViewFinal ? (
                     <Delayed delay={500}>
