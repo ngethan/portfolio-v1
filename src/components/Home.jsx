@@ -58,9 +58,11 @@ const Home = () => {
                     className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold my-4 max-w-[425.2px]"
                     variants={item}
                 >
-                    {["E", "t", "h", "a", "n", "\xa0", "N", "g"].map((letter) => {
-                        return <h1 className="duration-300 inline-block align-top hover:text-red-500">{letter}</h1>;
-                    })}
+                    <h1>
+                        {["E", "t", "h", "a", "n", "\xa0", "N", "g"].map((letter) => {
+                            return <span className="duration-300 inline align-top hover:text-red-500">{letter}</span>;
+                        })}
+                    </h1>
                 </motion.div>
                 <motion.div className="flex text-red-500 text-5xl sm:text-6xl font-bold" variants={item}>
                     <h2>Web Developer</h2>

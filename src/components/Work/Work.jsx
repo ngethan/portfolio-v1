@@ -88,13 +88,15 @@ const Work = () => {
             ref={ref}
         >
             <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold" variants={itemY}>
-                {["M", "y", "\xa0", "w", "o", "r", "k"].map((letter) => {
-                    return (
-                        <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500">
-                            {letter}
-                        </h1>
-                    );
-                })}
+                <h1>
+                    {["M", "y", "\xa0", "w", "o", "r", "k"].map((letter) => {
+                        return (
+                            <span className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500">
+                                {letter}
+                            </span>
+                        );
+                    })}
+                </h1>
             </motion.div>
 
             <div className="hidden md:flex">

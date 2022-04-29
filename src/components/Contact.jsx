@@ -81,13 +81,15 @@ const Contact = () => {
                 ref={ref}
             >
                 <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
-                    {["T", "h", "a", "n", "k", "\xa0", "y", "o", "u"].map((letter) => {
-                        return (
-                            <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
-                                {letter}
-                            </h1>
-                        );
-                    })}
+                    <h1>
+                        {["T", "h", "a", "n", "k", "\xa0", "y", "o", "u"].map((letter) => {
+                            return (
+                                <span className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+                                    {letter}
+                                </span>
+                            );
+                        })}
+                    </h1>
                 </motion.div>
             </motion.div>
         );
@@ -103,13 +105,15 @@ const Contact = () => {
             ref={ref}
         >
             <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
-                {["C", "o", "n", "t", "a", "c", "t"].map((letter) => {
-                    return (
-                        <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500">
-                            {letter}
-                        </h1>
-                    );
-                })}
+                <h1>
+                    {["C", "o", "n", "t", "a", "c", "t"].map((letter) => {
+                        return (
+                            <span className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500">
+                                {letter}
+                            </span>
+                        );
+                    })}
+                </h1>
             </motion.div>
             <form
                 className="font-code inline-flex flex-wrap justify-between w-full"
