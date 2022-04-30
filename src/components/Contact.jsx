@@ -118,7 +118,7 @@ const Contact = () => {
                 method="POST"
                 name="contact"
             >
-                <input type="hidden" name="contact" value="contact" />
+                <input type="hidden" name="form-name" value="contact" />
                 <motion.div className="inline-block flex-[1_1_40%] mr-[3%] mb-[30px]" variants={itemY}>
                     <label
                         id="name-label"
