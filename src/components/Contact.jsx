@@ -143,7 +143,13 @@ const Contact = () => {
                     >
                         Message
                     </label>
-                    <textarea type="text" id="message" name="message" className="relative input h-[88px] py-[8px]" required />
+                    <textarea
+                        type="text"
+                        id="message"
+                        name="message"
+                        className="relative input h-[88px] py-[8px]"
+                        required
+                    ></textarea>
                 </motion.div>
 
                 <motion.button
