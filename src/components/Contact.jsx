@@ -70,7 +70,6 @@ const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
     const handleSubmit = () => {
         setSubmitted(true);
-        return false;
     };
     if (submitted) {
         return (
@@ -115,7 +114,7 @@ const Contact = () => {
             <form
                 className="font-code inline-flex flex-wrap justify-between w-full"
                 onSubmit={handleSubmit}
-                method="POST"
+                method="post"
                 name="contact"
             >
                 <input type="hidden" name="form-name" value="contact" />
