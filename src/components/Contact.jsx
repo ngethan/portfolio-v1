@@ -116,13 +116,9 @@ const Contact = () => {
                 className="font-code inline-flex flex-wrap justify-between w-full"
                 onSubmit={handleSubmit}
                 method="POST"
-                netlify
-                netlify-honeypot="bot-field"
-                type="hidden"
                 name="contact"
-                value="contact"
-                hidden
             >
+                <input type="hidden" name="contact" value="contact" />
                 <motion.div className="inline-block flex-[1_1_40%] mr-[3%] mb-[30px]" variants={itemY}>
                     <label
                         id="name-label"
@@ -131,13 +127,13 @@ const Contact = () => {
                     >
                         Name
                     </label>
-                    <input type="text" id="name" name="Name" className="input relative" required />
+                    <input type="text" id="name" name="name" className="input relative" required />
                 </motion.div>
                 <motion.div className="inline-block flex-[1_1_40%] ml-[3%] mb-[30px]" variants={itemY}>
                     <label id="email-label" htmlFor="email" className="relative text-red-500 text-[24px] top-10 duration-300">
                         Email
                     </label>
-                    <input type="email" id="email" name="Email" className="input relative" required />
+                    <input type="email" id="email" name="email" className="input relative" required />
                 </motion.div>
                 <motion.div className="inline-block w-full mb-[40px]" variants={itemY}>
                     <label
