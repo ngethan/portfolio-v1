@@ -43,6 +43,13 @@
         <meta property="twitter:image" content="https://ethanng.dev/image.png" data-react-helmet="true" />
     </head>
     <body>
-        <div id="root"></div>
+        <div id="root">
+            <!-- A little help for the Netlify post-processing bots -->
+            <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+                <input type="text" name="Name" required />
+                <input type="email" name="Email" required />
+                <textarea type="text" name="message" required />
+            </form>
+        </div>
     </body>
 </html>

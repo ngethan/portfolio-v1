@@ -76,7 +76,7 @@ const Contact = () => {
         return (
             <div
                 id="contact"
-                className="py-[100px] bg-gray-800 text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
+                className="py-[100px] bg-transparent text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
                 initial="hidden"
                 animate={controls}
                 variants={list}
