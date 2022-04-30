@@ -30,7 +30,11 @@ const WorkInfo = ({ work, md }) => {
             title: "Fullstack Developer",
             url: "https://nydeo.org",
             duration: "January 2022 - Present",
-            description: ["WIP"],
+            description: [
+                "Designed website layout and created mockups",
+                "Used HTML, CSS, JavaScript, and Google Sheets as a database",
+                "Responsible for the general maintenance and upkeep of the website",
+            ],
         },
     };
 
