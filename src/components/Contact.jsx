@@ -61,18 +61,20 @@ const Contact = () => {
         document.getElementById("message").addEventListener("blur", (e) => {
             if (e.target.value?.trim().length === 0) document.getElementById("message-label").style.top = "40px";
         });
+
+        document.getElementById("submit").addEventListener("submit", (e) => {
+            e.preventDefault();
+        });
     };
 
     const [submitted, setSubmitted] = useState(false);
     const handleSubmit = () => {
-        setTimeout(() => {
-            setSubmitted(true);
-        }, 100);
+        setSubmitted(true);
+        return false;
     };
-
     if (submitted) {
         return (
-            <motion.div
+            <div
                 id="contact"
                 className="py-[100px] bg-gray-800 text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
                 initial="hidden"
@@ -80,18 +82,12 @@ const Contact = () => {
                 variants={list}
                 ref={ref}
             >
-                <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
-                    <h1>
-                        {["T", "h", "a", "n", "k", "\xa0", "y", "o", "u"].map((letter) => {
-                            return (
-                                <span className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
-                                    {letter}
-                                </span>
-                            );
-                        })}
+                <div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
+                    <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+                        Thanks for reaching out!
                     </h1>
-                </motion.div>
-            </motion.div>
+                </div>
+            </div>
         );
     }
 
@@ -115,12 +111,17 @@ const Contact = () => {
                     })}
                 </h1>
             </motion.div>
+
             <form
                 className="font-code inline-flex flex-wrap justify-between w-full"
-                action="https://public.herotofu.com/v1/dfbaa840-b763-11ec-b4fe-2b9cbf782176"
                 onSubmit={handleSubmit}
                 method="POST"
-                target="_self"
+                netlify
+                netlify-honeypot="bot-field"
+                type="hidden"
+                name="contact"
+                value="contact"
+                hidden
             >
                 <motion.div className="inline-block flex-[1_1_40%] mr-[3%] mb-[30px]" variants={itemY}>
                     <label
@@ -150,6 +151,7 @@ const Contact = () => {
                 </motion.div>
 
                 <motion.button
+                    id="submit"
                     className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-4 py-2 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
                     type="submit"
                     variants={itemY}
