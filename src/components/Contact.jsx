@@ -36,20 +36,6 @@ const Contact = () => {
         },
     };
 
-    const [submitted, setSubmitted] = useState(false);
-    const handleSubmit = (e) => {
-        let form = document.getElementById("contact_form");
-        let data = new FormData(form);
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(data).toString(),
-        })
-            .then(() => setSubmitted(true))
-            .catch((err) => alert(err));
-        e.preventDefault();
-    };
-
     window.onload = () => {
         document.getElementById("name").addEventListener("focus", (e) => {
             document.getElementById("name-label").style.top = "0px";
@@ -75,8 +61,20 @@ const Contact = () => {
         document.getElementById("message").addEventListener("blur", (e) => {
             if (e.target.value?.trim().length === 0) document.getElementById("message-label").style.top = "40px";
         });
+    };
 
-        document.getElementById("submit").addEventListener("submit", handleSubmit);
+    const [submitted, setSubmitted] = useState(false);
+    const handleSubmit = (e) => {
+        let form = document.getElementById("contact_form");
+        let data = new FormData(form);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(data).toString(),
+        })
+            .then(() => setSubmitted(true))
+            .catch((err) => alert(err));
+        e.preventDefault();
     };
 
     if (submitted) {
@@ -123,6 +121,7 @@ const Contact = () => {
                 id="contact_form"
                 className="font-code inline-flex flex-wrap justify-between w-full"
                 method="post"
+                onSubmit={handleSubmit}
                 name="contact"
             >
                 <input type="hidden" name="form-name" value="contact" />
