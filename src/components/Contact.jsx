@@ -46,7 +46,10 @@ const Contact = () => {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(data).toString(),
         })
-            .then(() => setSubmitted(true))
+            .then(() => {
+                setSubmitted(true);
+                console.log("Form successfully submitted");
+            })
             .catch((err) => alert(err));
     };
 
