@@ -97,7 +97,7 @@ const WorkInfo = ({ work, md }) => {
                 {data.description.map((i) => {
                     return (
                         <li className="relative pl-[30px] pr-0 mb-[10px] list-none before:absolute before:left-0 before:text-red-300 before:content-['▸'] before:font-black">
-                            {i}
+                            <p>{i}</p>
                         </li>
                     );
                 })}
