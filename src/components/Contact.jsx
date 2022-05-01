@@ -63,28 +63,28 @@ const Contact = () => {
         });
     };
 
-    const [submitted, setSubmitted] = useState(false);
-    const handleSubmit = () => {
-        setSubmitted(true);
-    };
-    if (submitted) {
-        return (
-            <div
-                id="contact"
-                className="py-[100px] bg-transparent text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
-                initial="hidden"
-                animate={controls}
-                variants={list}
-                ref={ref}
-            >
-                <div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
-                    <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
-                        Thanks for your message!
-                    </h1>
-                </div>
-            </div>
-        );
-    }
+    // const [submitted, setSubmitted] = useState(false);
+    // const handleSubmit = () => {
+    //     setSubmitted(true);
+    // };
+    // if (submitted) {
+    //     return (
+    //         <div
+    //             id="contact"
+    //             className="py-[100px] bg-transparent text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
+    //             initial="hidden"
+    //             animate={controls}
+    //             variants={list}
+    //             ref={ref}
+    //         >
+    //             <div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
+    //                 <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+    //                     Thanks for your message!
+    //                 </h1>
+    //             </div>
+    //         </div>
+    //     );
+    // }
 
     return (
         <motion.div
@@ -109,7 +109,7 @@ const Contact = () => {
 
             <form
                 className="font-code inline-flex flex-wrap justify-between w-full"
-                onSubmit={handleSubmit}
+                // onSubmit={handleSubmit}
                 method="post"
                 name="contact"
             >
