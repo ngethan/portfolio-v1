@@ -38,7 +38,6 @@ const Contact = () => {
 
     const [submitted, setSubmitted] = useState(false);
     const handleSubmit = (e) => {
-        e.preventDefault();
         let form = document.getElementById("contact_form");
         let data = new FormData(form);
         fetch("/", {
@@ -46,11 +45,9 @@ const Contact = () => {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(data).toString(),
         })
-            .then(() => {
-                setSubmitted(true);
-                console.log("Form successfully submitted");
-            })
+            .then(() => setSubmitted(true))
             .catch((err) => alert(err));
+        e.preventDefault();
     };
 
     window.onload = () => {
