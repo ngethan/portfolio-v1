@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -36,6 +36,20 @@ const Contact = () => {
         },
     };
 
+    const [submitted, setSubmitted] = useState(false);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let form = document.getElementById("contact_form");
+        let data = new FormData(form);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(data).toString(),
+        })
+            .then(() => setSubmitted(true))
+            .catch((err) => alert(err));
+    };
+
     window.onload = () => {
         document.getElementById("name").addEventListener("focus", (e) => {
             document.getElementById("name-label").style.top = "0px";
@@ -61,30 +75,28 @@ const Contact = () => {
         document.getElementById("message").addEventListener("blur", (e) => {
             if (e.target.value?.trim().length === 0) document.getElementById("message-label").style.top = "40px";
         });
+
+        document.getElementById("submit").addEventListener("submit", handleSubmit);
     };
 
-    // const [submitted, setSubmitted] = useState(false);
-    // const handleSubmit = () => {
-    //     setSubmitted(true);
-    // };
-    // if (submitted) {
-    //     return (
-    //         <div
-    //             id="contact"
-    //             className="py-[100px] bg-transparent text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
-    //             initial="hidden"
-    //             animate={controls}
-    //             variants={list}
-    //             ref={ref}
-    //         >
-    //             <div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
-    //                 <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
-    //                     Thanks for your message!
-    //                 </h1>
-    //             </div>
-    //         </div>
-    //     );
-    // }
+    if (submitted) {
+        return (
+            <div
+                id="contact"
+                className="py-[100px] bg-transparent text-gray-200 w-full max-w-[1075px] mx-auto h-screen px-4 flex flex-col"
+                initial="hidden"
+                animate={controls}
+                variants={list}
+                ref={ref}
+            >
+                <div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
+                    <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
+                        Thanks for your message!
+                    </h1>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <motion.div
@@ -108,8 +120,8 @@ const Contact = () => {
             </motion.div>
 
             <form
+                id="contact_form"
                 className="font-code inline-flex flex-wrap justify-between w-full"
-                // onSubmit={handleSubmit}
                 method="post"
                 name="contact"
             >
