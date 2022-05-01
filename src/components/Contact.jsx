@@ -61,10 +61,6 @@ const Contact = () => {
         document.getElementById("message").addEventListener("blur", (e) => {
             if (e.target.value?.trim().length === 0) document.getElementById("message-label").style.top = "40px";
         });
-
-        document.getElementById("submit").addEventListener("submit", (e) => {
-            e.preventDefault();
-        });
     };
 
     const [submitted, setSubmitted] = useState(false);
@@ -83,7 +79,7 @@ const Contact = () => {
             >
                 <div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
                     <h1 className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500">
-                        Thanks for reaching out!
+                        Thanks for your message!
                     </h1>
                 </div>
             </div>
