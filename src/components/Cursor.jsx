@@ -70,7 +70,7 @@ const Cursor = () => {
         if (elType === "H2" || elType === "P") {
             dot.current.style.width = "2px";
             dot.current.style.height = "20px";
-            dot.current.style.backgroundColor = "#E8313F";
+            dot.current.style.backgroundColor = "#F1838B";
             dot.current.style.border = "0px solid transparent";
             dot.current.style.borderRadius = "0";
 
@@ -81,7 +81,7 @@ const Cursor = () => {
         } else if (q[7]?.tagName === "A" || ["LI", "A", "BUTTON", "H1", "svg"].includes(elType)) {
             dot.current.style.width = "8px";
             dot.current.style.height = "8px";
-            dot.current.style.backgroundColor = "#E8313F";
+            dot.current.style.backgroundColor = "#F1838B";
             dot.current.style.border = "0px solid transparent";
             dot.current.style.borderRadius = "50%";
 
@@ -90,9 +90,9 @@ const Cursor = () => {
             dotOutline.current.style.borderColor = "#E8313F";
             dotOutline.current.style.backgroundColor = "transparent";
         } else {
-            dot.current.style.width = "8px";
-            dot.current.style.height = "8px";
-            dot.current.style.backgroundColor = "#E8313F";
+            dot.current.style.width = "10px";
+            dot.current.style.height = "10px";
+            dot.current.style.backgroundColor = "#F1838B";
             dot.current.style.borderColor = "transparent";
             dot.current.style.borderRadius = "50%";
 
