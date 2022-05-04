@@ -98,7 +98,7 @@ const Cursor = () => {
 
             dotOutline.current.style.width = "40px";
             dotOutline.current.style.height = "40px";
-            dotOutline.current.style.borderColor = "#EC5A65";
+            dotOutline.current.style.borderColor = "transparent";
             dotOutline.current.style.backgroundColor = "transparent";
             delay = 10;
         }
