@@ -145,12 +145,14 @@ const Work = () => {
                 <motion.ul
                     className="flex flex-row h-[42px] text-[15px] font-code mb-[5px] overflow-x-auto overflow-y-hidden"
                     variants={itemY}
+                    aria-label="Work"
                 >
                     <li
                         id="tcs-md"
                         className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 active-work-md"
                         data-work="tcs"
                         onClick={handleClick}
+                        aria-label="theCoderSchool"
                     >
                         theCoderSchool
                     </li>
@@ -159,6 +161,7 @@ const Work = () => {
                         className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="mpr"
                         onClick={handleClick}
+                        aria-label="Muddy Paws Rescue"
                     >
                         Muddy Paws Rescue
                     </li>
@@ -167,6 +170,7 @@ const Work = () => {
                         className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="nydeo"
                         onClick={handleClick}
+                        aria-label="NYDEO"
                     >
                         NYDEO
                     </li>

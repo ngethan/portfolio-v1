@@ -134,6 +134,7 @@ const Navbar = () => {
                         data-section="contact"
                         onClick={handleViewSection}
                         type="button"
+                        aria-label="Contact"
                     >
                         Contact
                     </button>
@@ -141,7 +142,7 @@ const Navbar = () => {
             </ul>
 
             <div className="md:hidden z-[1000]" onClick={handleClick}>
-                <Hamburger toggled={nav} toggle={setNav} size={25} />
+                <Hamburger toggled={nav} toggle={setNav} size={25} label="Menu" />
             </div>
 
             <motion.ul

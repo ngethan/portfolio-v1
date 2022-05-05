@@ -93,6 +93,7 @@ const Home = () => {
                         className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-5 py-3 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
                         onClick={handleViewWork}
                         type="button"
+                        aria-label="View work"
                     >
                         View work
                     </button>

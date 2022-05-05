@@ -123,6 +123,7 @@ const Contact = () => {
                 method="post"
                 onSubmit={handleSubmit}
                 name="contact"
+                aria-label="Contact"
             >
                 <input type="hidden" name="form-name" value="contact" />
                 <motion.div className="inline-block flex-[1_1_40%] mr-[3%] mb-[30px]" variants={itemY}>
@@ -163,6 +164,7 @@ const Contact = () => {
                     className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-4 py-2 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"
                     type="submit"
                     variants={itemY}
+                    aria-label="Send message"
                 >
                     Send message
                 </motion.button>
