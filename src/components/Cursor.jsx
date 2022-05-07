@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 const Cursor = () => {
-    let delay = 10;
+    let delay = 5;
     const cursorVisible = useRef(true);
     const cursorEnlarged = useRef(false);
 
@@ -62,36 +62,18 @@ const Cursor = () => {
         endX.current = e.clientX;
         endY.current = e.clientY;
 
-        dot.current.style.left = endX.current + "px";
-        dot.current.style.top = endY.current + "px";
-
         const q = document.querySelectorAll(":hover");
         const elType = q[q.length - 1].tagName;
-        if (q[7]?.tagName === "A" || ["LI", "A", "BUTTON", "H1"].includes(elType)) {
-            dot.current.style.width = "8px";
-            dot.current.style.height = "8px";
-            dot.current.style.backgroundColor = "#F1838B";
-            dot.current.style.border = "0px solid transparent";
-            dot.current.style.borderRadius = "50%";
+        if (q[7]?.tagName === "A" || ["LI", "A", "BUTTON", "H1", "svg"].includes(elType)) {
+            dot.current.style.backgroundColor = "transparent";
 
             dotOutline.current.style.width = "50px";
             dotOutline.current.style.height = "50px";
             dotOutline.current.style.borderColor = "#E8313F";
             dotOutline.current.style.backgroundColor = "transparent";
-        } else if (elType === "H2" || elType === "P") {
-            dot.current.style.width = "2px";
-            dot.current.style.height = "20px";
-            dot.current.style.backgroundColor = "#F1838B";
-            dot.current.style.border = "0px solid transparent";
-            dot.current.style.borderRadius = "0";
-
-            dotOutline.current.style.width = "40px";
-            dotOutline.current.style.height = "40px";
-            dotOutline.current.style.borderColor = "transparent";
-            dotOutline.current.style.backgroundColor = "transparent";
         } else {
-            dot.current.style.width = "10px";
-            dot.current.style.height = "10px";
+            dot.current.style.width = "13px";
+            dot.current.style.height = "13px";
             dot.current.style.backgroundColor = "#F1838B";
             dot.current.style.borderColor = "transparent";
             dot.current.style.borderRadius = "50%";
@@ -106,6 +88,9 @@ const Cursor = () => {
     const animateDotOutline = () => {
         _x.current += (endX.current - _x.current) / delay;
         _y.current += (endY.current - _y.current) / delay;
+
+        dot.current.style.left = _x.current + "px";
+        dot.current.style.top = _y.current + "px";
 
         dotOutline.current.style.left = _x.current + "px";
         dotOutline.current.style.top = _y.current + "px";
