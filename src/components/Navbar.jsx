@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Spin as Hamburger } from "hamburger-react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import icon from "../assets/icon.png";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -88,7 +89,7 @@ const Navbar = () => {
             ref={ref}
         >
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} variants={item}>
-                <h1 className="text-5xl text-red-500 font-bold">EN</h1>
+                <img src={icon} className="md:w-[48px] md:h-[48px] w-[32px] h-[32px]" alt="Logo" />
             </motion.div>
 
             <ul className="hidden md:flex font-code text-lg items-center">

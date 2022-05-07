@@ -59,8 +59,12 @@ const Home = () => {
                     variants={item}
                 >
                     <h1>
-                        {["E", "t", "h", "a", "n", "\xa0", "N", "g"].map((letter) => {
-                            return <span className="duration-300 inline align-top hover:text-red-500">{letter}</span>;
+                        {["E", "t", "h", "a", "n", "\xa0", "N", "g"].map((letter, index) => {
+                            return (
+                                <span className="duration-300 inline align-top hover:text-red-500" key={index}>
+                                    {letter}
+                                </span>
+                            );
                         })}
                     </h1>
                 </motion.div>

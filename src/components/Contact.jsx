@@ -107,9 +107,12 @@ const Contact = () => {
         >
             <motion.div className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold " variants={itemY}>
                 <h1>
-                    {["C", "o", "n", "t", "a", "c", "t"].map((letter) => {
+                    {["C", "o", "n", "t", "a", "c", "t"].map((letter, index) => {
                         return (
-                            <span className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500">
+                            <span
+                                className="text-4xl mb-[40px] duration-300 inline-block align-top hover:text-red-500 border-b-[2px] border-red-500"
+                                key={index}
+                            >
                                 {letter}
                             </span>
                         );

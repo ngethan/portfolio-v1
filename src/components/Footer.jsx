@@ -9,7 +9,7 @@ const Footer = () => {
         <footer className="flex flex-col justify-center items-center sticky top-full pb-[20px] w-full h-auto mb-[20px]">
             <h1 className="text-[20px] text-red-400 font-bold mb-[20px]">
                 Ethan Ng&nbsp;&nbsp;
-                <h1 className="text-gray-100 inline-block font-normal">Portfolio</h1>
+                <p className="text-gray-100 inline-block font-normal">Portfolio</p>
             </h1>
             <ul className="flex flex-row text-gray-100 text-[18px]">
                 <li>
@@ -94,7 +94,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="text-gray-100 text-[16px] hover-animation-dark font-code hover:text-red-500 duration-300"
-                aria="Project Repository"
+                aria-label="Project Repository"
             >
                 Designed and built by Ethan Ng
             </a>

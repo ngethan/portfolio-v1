@@ -42,7 +42,6 @@ const WorkInfo = ({ work, md }) => {
         visible: {
             opacity: 1,
             transition: {
-                // delay: 0.5,
                 when: "beforeChildren",
                 staggerChildren: 0.05,
             },
@@ -93,15 +92,18 @@ const WorkInfo = ({ work, md }) => {
             <motion.p id="duration" className="font-code text-[17px] text-gray-200 mb-4" variants={itemY}>
                 {data.duration}
             </motion.p>
-            <motion.p id="description whitespace-pre-line" className="text-gray-200" variants={itemY}>
-                {data.description.map((i) => {
+            <motion.ul id="description" variants={itemY}>
+                {data.description.map((i, index) => {
                     return (
-                        <li className="relative pl-[30px] pr-0 mb-[10px] list-none before:absolute before:left-0 before:text-red-300 before:content-['▸'] before:font-black">
+                        <li
+                            className="relative pl-[30px] pr-0 mb-[10px] list-none before:absolute before:left-0 before:text-red-300 before:content-['▸'] before:font-black"
+                            key={index}
+                        >
                             <p>{i}</p>
                         </li>
                     );
                 })}
-            </motion.p>
+            </motion.ul>
         </motion.div>
     );
 };

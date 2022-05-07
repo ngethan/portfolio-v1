@@ -6,11 +6,12 @@ import Contact from "./components/Contact";
 import Cursor from "./components/Cursor";
 import Stars from "./components/Stars";
 import Footer from "./components/Footer";
-import { Helmet } from "react-helmet";
+import Skills from "./components/Skills";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function App() {
     return (
-        <div>
+        <HelmetProvider>
             <Helmet>
                 <title>Ethan Ng</title>
                 <meta charset="utf-8" />
@@ -49,11 +50,12 @@ function App() {
             <Navbar />
             <Home />
             <About />
+            <Skills />
             <Work />
             <Contact />
             <Footer />
             <Cursor />
-        </div>
+        </HelmetProvider>
     );
 }
 
