@@ -17,8 +17,8 @@ const Skill = ({ name, icon, noName }) => {
             <div
                 className={
                     !noName
-                        ? "group rounded px-[10px] mb-[20px] h-[75px] bg-[#1b1c1b] shadow-lg shadow-red-100/[.5] duration-300 hover:scale-[1.12] transform-gpu mr-[50px] justify-center"
-                        : "group rounded px-[10px] mb-[20px] h-[60px] bg-[#1b1c1b] shadow-lg shadow-red-100/[.5] duration-300 hover:scale-[1.12] transform-gpu mr-[20px] justify-center z-0"
+                        ? "group rounded px-[10px] mb-[20px] h-[75px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] hover:shadow-red-200/[.8] duration-300 hover:scale-[1.12] transform-gpu mr-[50px] justify-center"
+                        : "group rounded px-[10px] mb-[20px] h-[60px] bg-[#1b1c1b] shadow-lg shadow-gray-100/[.4] hover:shadow-red-200/[.8] duration-300 hover:scale-[1.12] transform-gpu mr-[20px] justify-center z-0"
                 }
                 variants={itemY}
             >
