@@ -42,7 +42,7 @@ const Skills = () => {
     return (
         <motion.div
             id="skills"
-            className="pb-[100px] flex flex-row flex-wrap mx-auto w-full max-w-[950px] px-4"
+            className="py-[100px] flex flex-row flex-wrap mx-auto w-full max-w-[950px] px-4"
             initial="hidden"
             animate={controls}
             variants={list}
@@ -84,23 +84,23 @@ const Skills = () => {
             </div>
 
             <div className="md:hidden flex flex-row flex-wrap justify-center">
-                <Skill icon={DiHtml5} variants={itemY} noName />
-                <Skill icon={FaCss3} variants={itemY} noName />
-                <Skill icon={DiSass} variants={itemY} noName />
-                <Skill icon={SiTailwindcss} variants={itemY} noName />
-                <Skill icon={SiJavascript} variants={itemY} noName />
-                <Skill icon={SiTypescript} variants={itemY} noName />
-                <Skill icon={FaNodeJs} variants={itemY} noName />
-                <Skill icon={FaPython} variants={itemY} noName />
-                <Skill icon={FaJava} variants={itemY} noName />
-                <Skill icon={FaReact} variants={itemY} noName />
-                <Skill icon={DiGit} variants={itemY} noName />
-                <Skill icon={DiMongodb} variants={itemY} noName />
-                <Skill icon={FaSquarespace} variants={itemY} noName />
-                <Skill icon={FaWordpressSimple} variants={itemY} noName />
-                <Skill icon={SiNetlify} variants={itemY} noName />
-                <Skill icon={DiHeroku} variants={itemY} noName />
-                <Skill icon={FaAws} variants={itemY} noName />
+                <Skill name="HTML" icon={DiHtml5} variants={itemY} noName />
+                <Skill name="CSS" icon={FaCss3} variants={itemY} noName />
+                <Skill name="Sass" icon={DiSass} variants={itemY} noName />
+                <Skill name="TailwindCSS" icon={SiTailwindcss} variants={itemY} noName />
+                <Skill name="JavaScript" icon={SiJavascript} variants={itemY} noName />
+                <Skill name="TypeScript" icon={SiTypescript} variants={itemY} noName />
+                <Skill name="Node.js" icon={FaNodeJs} variants={itemY} noName />
+                <Skill name="Python" icon={FaPython} variants={itemY} noName />
+                <Skill name="Java" icon={FaJava} variants={itemY} noName />
+                <Skill name="React.js" icon={FaReact} variants={itemY} noName />
+                <Skill name="Git" icon={DiGit} variants={itemY} noName />
+                <Skill name="MongoDB" icon={DiMongodb} variants={itemY} noName />
+                <Skill name="Squarespace" icon={FaSquarespace} variants={itemY} noName />
+                <Skill name="Wordpress" icon={FaWordpressSimple} variants={itemY} noName />
+                <Skill name="Netlify" icon={SiNetlify} variants={itemY} noName />
+                <Skill name="Heroku" icon={DiHeroku} variants={itemY} noName />
+                <Skill name="AWS" icon={FaAws} variants={itemY} noName />
             </div>
         </motion.div>
     );

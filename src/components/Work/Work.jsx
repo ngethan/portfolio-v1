@@ -109,7 +109,7 @@ const Work = () => {
                 >
                     <li
                         id="tcs"
-                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 active-work"
+                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-400 py-4 active-work"
                         data-work="tcs"
                         onClick={handleClick}
                     >
@@ -117,7 +117,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr"
-                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-400 py-4 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
                     >
@@ -125,7 +125,7 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo"
-                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-600 py-4 inactive-work"
+                        className="flex items-center text-left w-[175px] h-[42px] duration-300 border-l-[2px] border-gray-400 py-4 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
@@ -152,7 +152,7 @@ const Work = () => {
                 >
                     <li
                         id="tcs-md"
-                        className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 active-work-md"
+                        className="flex items-center justify-center w-[180px] duration-300 border-b-[2px] py-4 active-work-md"
                         data-work="tcs"
                         onClick={handleClick}
                         aria-label="theCoderSchool"
@@ -161,7 +161,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr-md"
-                        className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 inactive-work-md"
+                        className="flex items-center justify-center w-[180px] duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="mpr"
                         onClick={handleClick}
                         aria-label="Muddy Paws Rescue"
@@ -170,14 +170,14 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo-md"
-                        className="flex items-center justify-center w-[175px] duration-300 border-b-[2px] py-4 inactive-work-md"
+                        className="flex items-center justify-center w-[180px] duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="nydeo"
                         onClick={handleClick}
                         aria-label="NYDEO"
                     >
                         NYDEO
                     </li>
-                    <div className="mr-[-480px] mt-[-42px] w-[175px] h-[2px] border-l-[2px] border-red-500 duration-300"></div>
+                    <div className="mr-[-480px] mt-[-42px] w-[180px] h-[2px] border-l-[2px] border-red-500 duration-300"></div>
                 </motion.ul>
                 {inViewFinal ? (
                     <Delayed delay={500}>

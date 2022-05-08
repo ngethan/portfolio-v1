@@ -64,7 +64,11 @@ const Cursor = () => {
 
         const q = document.querySelectorAll(":hover");
         const elType = q[q.length - 1].tagName;
-        if (q[7]?.tagName === "A" || ["LI", "A", "BUTTON", "H1", "svg"].includes(elType)) {
+        if (
+            q[7]?.tagName === "A" ||
+            ["LI", "A", "BUTTON", "H1", "svg", "path", "SPAN"].includes(elType) ||
+            q[q.length - 1].classList[0] === "skill"
+        ) {
             dot.current.style.backgroundColor = "transparent";
 
             dotOutline.current.style.width = "50px";

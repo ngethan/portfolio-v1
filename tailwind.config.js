@@ -26,9 +26,6 @@ module.exports = {
                     900: "#000000",
                 },
             },
-            screens: {
-                icon: "1215px",
-            },
         },
     },
     plugins: [],
