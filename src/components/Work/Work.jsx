@@ -152,7 +152,7 @@ const Work = () => {
                 >
                     <li
                         id="tcs-md"
-                        className="flex items-center justify-center w-[200px] duration-300 border-b-[2px] py-4 active-work-md"
+                        className="flex items-center justify-center w-fit duration-300 border-b-[2px] py-4 active-work-md"
                         data-work="tcs"
                         onClick={handleClick}
                         aria-label="theCoderSchool"
@@ -161,7 +161,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr-md"
-                        className="flex items-center justify-center w-[200px] duration-300 border-b-[2px] py-4 inactive-work-md"
+                        className="flex items-center justify-center w-fit duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="mpr"
                         onClick={handleClick}
                         aria-label="Muddy Paws Rescue"
@@ -170,14 +170,13 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo-md"
-                        className="flex items-center justify-center w-[200px] duration-300 border-b-[2px] py-4 inactive-work-md"
+                        className="flex items-center justify-center w-fit duration-300 border-b-[2px] py-4 inactive-work-md"
                         data-work="nydeo"
                         onClick={handleClick}
                         aria-label="NYDEO"
                     >
                         NYDEO
                     </li>
-                    <div className="mr-[-480px] mt-[-42px] w-[200px] h-[2px] border-l-[2px] border-red-500 duration-300"></div>
                 </motion.ul>
                 {inViewFinal ? (
                     <Delayed delay={500}>
