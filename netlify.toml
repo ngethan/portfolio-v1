@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/rr"
+  to = "https://www.youtube.com/watch?v=xvFZjo5PgG0"
+  status = 301
+  force = true
