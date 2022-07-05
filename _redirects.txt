@@ -1,2 +1,2 @@
 # Redirects from what the browser requests to what we serve
-/rr                https://www.youtube.com/watch?v=xvFZjo5PgG0
+/rr                https://youtu.be/QhOWr56LAdE
