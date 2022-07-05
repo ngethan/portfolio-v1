@@ -10,7 +10,7 @@
         "@testing-library/jest-dom": "^5.16.3",
         "@testing-library/react": "^12.1.4",
         "@testing-library/user-event": "^13.5.0",
-        "@types/three": "0.137.0",
+        "@types/three": "^0.134.0",
         "framer-motion": "^6.2.8",
         "hamburger-react": "^2.4.1",
         "maath": "0.0.2",
