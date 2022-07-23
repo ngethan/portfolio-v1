@@ -104,12 +104,12 @@ const Work = () => {
 
             <div className="hidden md:flex">
                 <motion.ul
-                    className="flex flex-col justify-left items-left text-[15px] h-[42px] font-code float-left"
+                    className="flex flex-col justify-left items-left text-[15px] font-code float-left"
                     variants={itemX}
                 >
                     <li
                         id="tcs"
-                        className="inline-flex items-center text-left flex-1 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 active-work"
+                        className="inline-flex items-center text-left h-[42px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 active-work"
                         data-work="tcs"
                         onClick={handleClick}
                     >
@@ -117,7 +117,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr"
-                        className="inline-flex items-center text-left flex-1 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
+                        className="inline-flex items-center text-left h-[42px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
                     >
@@ -125,7 +125,7 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo"
-                        className="inline-flex items-center text-left flex-1 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
+                        className="inline-flex items-center text-left h-[42px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
