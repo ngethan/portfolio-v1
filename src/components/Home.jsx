@@ -52,7 +52,7 @@ const Home = () => {
         >
             <div className="max-w-[473.9px] max-h-[473.89px] mr-[100px]">
                 <motion.div className="flex text-gray-100 text-xl font-code max-w-[181.4px]" variants={item}>
-                    <p>👋 Hi there, I'm</p>
+                    <span>👋 Hi there, I'm</span>
                 </motion.div>
                 <motion.div
                     className="name flex text-[0px] text-gray-100 text-7xl sm:text-8xl font-bold my-4 max-w-[425.2px]"
