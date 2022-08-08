@@ -70,18 +70,18 @@ const Work = () => {
             e.target.classList.add("active-work");
             e.target.classList.remove("inactive-work");
             if (e.target.dataset.work === "tcs")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-126px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-141px"));
             if (e.target.dataset.work === "mpr")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-84px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-94px"));
             else if (e.target.dataset.work === "nydeo")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-42px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-47px"));
         }
     };
 
     return (
         <motion.div
             id="work"
-            className="py-[100px] text-gray-200 w-full h-[500px] max-w-[750px] mx-auto px-4 flex flex-col"
+            className="py-[100px] mb-[100px] text-gray-200 w-full h-[500px] max-w-[850px] mx-auto px-4 flex flex-col"
             initial="hidden"
             animate={controls}
             variants={list}
@@ -104,12 +104,12 @@ const Work = () => {
 
             <div className="hidden md:flex">
                 <motion.ul
-                    className="flex flex-col justify-left items-left text-[15px] font-code float-left"
+                    className="flex flex-col justify-left items-left text-[20px] font-medium font-code float-left"
                     variants={itemX}
                 >
                     <li
                         id="tcs"
-                        className="inline-flex items-center text-left h-[42px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 active-work"
+                        className="inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 active-work"
                         data-work="tcs"
                         onClick={handleClick}
                     >
@@ -117,7 +117,7 @@ const Work = () => {
                     </li>
                     <li
                         id="mpr"
-                        className="inline-flex items-center text-left h-[42px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
+                        className="inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
                         data-work="mpr"
                         onClick={handleClick}
                     >
@@ -125,7 +125,7 @@ const Work = () => {
                     </li>
                     <li
                         id="nydeo"
-                        className="inline-flex items-center text-left h-[42px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
+                        className="inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
                         data-work="nydeo"
                         onClick={handleClick}
                     >
@@ -133,7 +133,7 @@ const Work = () => {
                     </li>
                     <div
                         id="selected-indicator"
-                        className="relative top-0 mt-[-126px] w-[2px] h-[42px] border-l-[2px] border-red-500 duration-300"
+                        className="relative top-0 mt-[-141px] w-[2px] h-[47px] border-l-[2px] border-red-500 duration-300"
                     ></div>
                 </motion.ul>
 
@@ -146,7 +146,7 @@ const Work = () => {
 
             <div className="flex flex-col md:hidden">
                 <motion.ul
-                    className="flex flex-row h-[42px] text-[15px] font-code mb-[5px] overflow-x-auto overflow-y-hidden"
+                    className="flex flex-row h-[47px] text-[18px] font-code mb-[5px] overflow-x-auto overflow-y-hidden"
                     variants={itemY}
                     aria-label="Work"
                 >

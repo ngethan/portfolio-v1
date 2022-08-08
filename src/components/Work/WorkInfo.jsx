@@ -75,13 +75,13 @@ const WorkInfo = ({ work, md }) => {
             variants={list}
         >
             <motion.div variants={itemY}>
-                <motion.p id="title" className="inline text-[20px] text-gray-100 font-bold mb-1">
+                <motion.p id="title" className="inline text-[24px] text-gray-100 font-bold mb-1">
                     {data.title}
                 </motion.p>
-                <p className="inline text-[20px] text-red-500 font-bold"> @ </p>
+                <p className="inline text-[24px] text-red-500 font-bold"> @ </p>
                 <a
                     id="name"
-                    className="inline text-[20px] text-red-500 font-bold hover-animation-dark"
+                    className="inline text-[24px] text-red-500 font-bold hover-animation-dark"
                     href={data.url}
                     target="_blank"
                     rel="noreferrer"
@@ -89,14 +89,14 @@ const WorkInfo = ({ work, md }) => {
                     {data.name}
                 </a>
             </motion.div>
-            <motion.p id="duration" className="font-code text-[17px] text-gray-200 mb-4" variants={itemY}>
+            <motion.p id="duration" className="font-code text-[20px] text-gray-200 mb-4" variants={itemY}>
                 {data.duration}
             </motion.p>
             <motion.ul id="description" variants={itemY}>
                 {data.description.map((i, index) => {
                     return (
                         <li
-                            className="relative pl-[30px] pr-0 mb-[10px] list-none before:absolute before:left-0 before:text-red-300 before:content-['▸'] before:font-black"
+                            className="relative text-[18px] pl-[30px] pr-0 mb-[10px] list-none before:absolute before:left-0 before:text-red-300 before:content-['▸'] before:font-black"
                             key={index}
                         >
                             <p>{i}</p>
