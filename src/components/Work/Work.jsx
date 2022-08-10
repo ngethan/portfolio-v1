@@ -146,7 +146,7 @@ const Work = () => {
 
             <div className="flex flex-col md:hidden">
                 <motion.ul
-                    className="flex flex-row h-[47px] text-[18px] font-code mb-[5px] overflow-x-auto overflow-y-hidden"
+                    className="flex flex-row h-[47px] text-[18px] font-code mb-[5px] overflow-x-scroll overflow-y-hidden ul-mobile"
                     variants={itemY}
                     aria-label="Work"
                 >

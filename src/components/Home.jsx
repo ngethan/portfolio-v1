@@ -69,9 +69,9 @@ const Home = () => {
                     </h1>
                 </motion.div>
                 <motion.div className="flex text-red-500 text-5xl sm:text-6xl font-bold" variants={item}>
-                    <h2>Web Developer</h2>
+                    <h2>Software Engineer</h2>
                 </motion.div>
-                <motion.p className="text-gray-200 my-7 max-w-[500px] text-lg" variants={item}>
+                <motion.p className="text-gray-200 my-2 max-w-[500px] text-lg" variants={item}>
                     I'm a software engineer specializing in building web and desktop applications. Currently, I'm teaching at{" "}
                     <a
                         className="text-red-200 hover-animation-light font-code"
@@ -92,6 +92,7 @@ const Home = () => {
                     </a>
                     .
                 </motion.p>
+
                 <motion.div variants={item}>
                     <button
                         className="text-red-400 border-red-400 font-code text-lg border-2 rounded-lg px-5 py-3 my-2 flex items-center duration-300 hover:bg-red-300/[.3]"

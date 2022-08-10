@@ -8,6 +8,7 @@ import Stars from "./components/Stars";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Socials from "./components/Socials";
 
 function App() {
     return (
@@ -36,7 +37,7 @@ function App() {
                 <meta name="google" content="notranslate" />
                 <meta http-equiv="Content-Language" content="en" />
                 <meta property="og:image" content="https://ethanng.dev/image.png" />
-                <meta name="twitter:creator" content="@intuitiveen" />
+                <meta name="twitter:creator" content="@ethanng21" />
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content="https://ethanng.dev/" />
                 <meta property="twitter:title" content="Ethan Ng" />
@@ -46,6 +47,7 @@ function App() {
                 />
                 <meta property="twitter:image" content="https://ethanng.dev/image.png" />
             </Helmet>
+            <Socials />
             <Stars />
             <Navbar />
             <Home />

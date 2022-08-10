@@ -1,5 +1,5 @@
 import React from "react";
-import { FiGithub, FiLinkedin, FiInstagram, FiCodepen } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiInstagram, FiTwitter } from "react-icons/fi";
 
 const Footer = () => {
     const handleViewSection = (e) => {
@@ -52,7 +52,7 @@ const Footer = () => {
 
             <ul className="flex flex-row mb-[10px]">
                 <li className="group mx-[15px] px-[5px] my-[20px]">
-                    <a href="https://github.com/intuitiveen" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <a href="https://github.com/ethanng21" target="_blank" rel="noreferrer" aria-label="GitHub">
                         <FiGithub
                             className="text-gray-200 duration-300 group-hover:text-red-500 group-hover:translate-y-[-5px]"
                             size={25}
@@ -81,8 +81,8 @@ const Footer = () => {
                     </a>
                 </li>
                 <li className="group mx-[15px] px-[5px] my-[20px]">
-                    <a href="https://codepen.io/intuitiveen/" target="_blank" rel="noreferrer" aria-label="CodePen">
-                        <FiCodepen
+                    <a href="https://twitter.com/ethanng21/" target="_blank" rel="noreferrer" aria-label="CodePen">
+                        <FiTwitter
                             className="text-gray-200 duration-300 group-hover:text-red-500 group-hover:translate-y-[-5px]"
                             size={25}
                         />
@@ -90,7 +90,7 @@ const Footer = () => {
                 </li>
             </ul>
             <a
-                href="https://github.com/intuitiveen/portfolio"
+                href="https://github.com/ethanng21/portfolio"
                 target="_blank"
                 rel="noreferrer"
                 className="text-gray-100 text-[16px] hover-animation-dark font-code hover:text-red-500 duration-300"

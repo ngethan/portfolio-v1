@@ -9,15 +9,20 @@
         scroll-behavior: smooth;
     }
 
-    *::-webkit-scrollbar {
-        display: none;
-    }
-
     body {
         margin: 0;
         padding: 0;
         background-color: theme("colors.gray.800");
         @apply font-[Inter];
+    }
+
+    body::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        border-radius: 25px;
+        background-color: theme("colors.red.500");
     }
 
     .cursor-dot,
