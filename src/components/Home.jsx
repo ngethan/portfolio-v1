@@ -69,7 +69,7 @@ const Home = () => {
                     </h1>
                 </motion.div>
                 <motion.div className="flex text-red-500 text-5xl sm:text-6xl font-bold" variants={item}>
-                    <h2>Software Engineer</h2>
+                    <h2 className="text-[52px]">Software Engineer</h2>
                 </motion.div>
                 <motion.p className="text-gray-200 my-2 max-w-[500px] text-lg" variants={item}>
                     I'm a software engineer specializing in building web and desktop applications. Currently, I'm teaching at{" "}
