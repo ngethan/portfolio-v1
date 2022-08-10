@@ -70,11 +70,13 @@ const Work = () => {
             e.target.classList.add("active-work");
             e.target.classList.remove("inactive-work");
             if (e.target.dataset.work === "tcs")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-141px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = -47 * 4 + "px"));
             if (e.target.dataset.work === "mpr")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-94px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = -47 * 3 + "px"));
             else if (e.target.dataset.work === "nydeo")
-                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = "-47px"));
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = -47 * 2 + "px"));
+            else if (e.target.dataset.work === "aetheria")
+                sleep(100).then(() => (document.getElementById("selected-indicator").style.marginTop = -47 * 1 + "px"));
         }
     };
 
@@ -131,6 +133,14 @@ const Work = () => {
                     >
                         NYDEO
                     </li>
+                    <li
+                        id="aetheria"
+                        className="inline-flex items-center text-left h-[47px] py-4 whitespace-nowrap duration-300 border-l-[2px] border-gray-400 inactive-work"
+                        data-work="aetheria"
+                        onClick={handleClick}
+                    >
+                        Aetheria
+                    </li>
                     <div
                         id="selected-indicator"
                         className="relative top-0 mt-[-141px] w-[2px] h-[47px] border-l-[2px] border-red-500 duration-300"
@@ -176,6 +186,15 @@ const Work = () => {
                         aria-label="NYDEO"
                     >
                         NYDEO
+                    </li>
+                    <li
+                        id="aetheria-md"
+                        className="flex items-center justify-center whitespace-nowrap duration-300 border-b-[2px] py-4 inactive-work-md"
+                        data-work="aetheria"
+                        onClick={handleClick}
+                        aria-label="AETHERIA"
+                    >
+                        Aetheria
                     </li>
                 </motion.ul>
                 {inViewFinal ? (

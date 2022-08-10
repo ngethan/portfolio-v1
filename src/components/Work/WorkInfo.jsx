@@ -12,6 +12,7 @@ const WorkInfo = ({ work, md }) => {
                 "Facilitate learning amongst beginner and intermediate programmers",
                 "Teach scratch, Python, JavaScript, HTML, and CSS",
                 "Promote a positive and productive work environment, devise fun and educational projects, and maintain the physical class environment.",
+                "Trained and managed interns to assist with various tasks from overseeing the physical classroom to teaching and mentoring",
             ],
         },
         mpr: {
@@ -34,6 +35,17 @@ const WorkInfo = ({ work, md }) => {
                 "Designed website layout and created mockups",
                 "Used HTML, CSS, JavaScript, and Google Sheets as a database",
                 "Responsible for the general maintenance and upkeep of the website",
+            ],
+        },
+        aetheria: {
+            name: "Aetheria",
+            title: "Lead Developer",
+            url: "https://discord.aetheria.world",
+            duration: "June 2022 - Present",
+            description: [
+                "Used Java & Paper API to develop highly functional Minecraft plugins",
+                "Used TypeScript & discord.js to develop a general purpose discord management bot",
+                "Manged the server, staff, and oversaw the server's overall operation",
             ],
         },
     };
@@ -65,6 +77,7 @@ const WorkInfo = ({ work, md }) => {
     let data = workData.tcs;
     if (work === "mpr") data = workData.mpr;
     else if (work === "nydeo") data = workData.nydeo;
+    else if (work === "aetheria") data = workData.aetheria;
 
     return (
         <motion.div
