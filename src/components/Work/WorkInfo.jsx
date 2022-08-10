@@ -74,10 +74,7 @@ const WorkInfo = ({ work, md }) => {
         },
     };
 
-    let data = workData.tcs;
-    if (work === "mpr") data = workData.mpr;
-    else if (work === "nydeo") data = workData.nydeo;
-    else if (work === "aetheria") data = workData.aetheria;
+    let data = workData[work];
 
     return (
         <motion.div

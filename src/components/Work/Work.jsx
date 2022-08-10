@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import WorkInfo from "./WorkInfo";
@@ -54,6 +54,8 @@ const Work = () => {
         return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
+    const ulRef = useRef();
+
     const handleClick = (e) => {
         setWork(e.target.dataset.work);
 
@@ -106,6 +108,7 @@ const Work = () => {
 
             <div className="hidden md:flex">
                 <motion.ul
+                    ref={ulRef}
                     className="flex flex-col justify-left items-left text-[20px] font-medium font-code float-left"
                     variants={itemX}
                 >
@@ -143,7 +146,7 @@ const Work = () => {
                     </li>
                     <div
                         id="selected-indicator"
-                        className="relative top-0 mt-[-141px] w-[2px] h-[47px] border-l-[2px] border-red-500 duration-300"
+                        className="relative top-0 mt-[-188px] w-[2px] h-[47px] border-l-[2px] border-red-500 duration-300"
                     ></div>
                 </motion.ul>
 
