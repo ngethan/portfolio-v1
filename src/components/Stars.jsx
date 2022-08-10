@@ -5,7 +5,7 @@ import * as random from "maath/random/dist/maath-random.esm";
 
 const Stars = () => {
     const Stars = (props) => {
-        const [globalCoords, setGlobalCoords] = useState({ x: 0, y: 0 });
+        const [globalCoords, setGlobalCoords] = useState({ x: 0.1, y: 0.1 });
 
         useEffect(() => {
             const handleWindowMouseMove = (event) => {
