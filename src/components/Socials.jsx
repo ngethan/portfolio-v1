@@ -5,7 +5,7 @@ const Socials = () => {
     return (
         <ul className="hidden md:flex flex-col fixed bottom-12 right-7">
             <li className="group mb-[30px]">
-                <a href="https://github.com/ethanng21" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <a href="https://github.com/ngethan" target="_blank" rel="noreferrer" aria-label="GitHub">
                     <FiGithub
                         className="text-gray-200 duration-300 group-hover:text-red-500 group-hover:translate-y-[-5px]"
                         size={25}
