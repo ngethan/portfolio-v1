@@ -137,13 +137,13 @@ const Contact = () => {
                     >
                         Name
                     </label>
-                    <input type="text" id="name" name="name" className="input relative" required />
+                    <input type="text" id="name" name="name" className="input relative text-[18px]" required />
                 </motion.div>
                 <motion.div className="inline-block flex-[1_1_40%] ml-[3%] mb-[30px]" variants={itemY}>
                     <label id="email-label" htmlFor="email" className="relative text-red-500 text-[24px] top-10 duration-300">
                         Email
                     </label>
-                    <input type="email" id="email" name="email" className="input relative" required />
+                    <input type="email" id="email" name="email" className="input relative text-[18px]" required />
                 </motion.div>
                 <motion.div className="inline-block w-full mb-[40px]" variants={itemY}>
                     <label
@@ -157,7 +157,7 @@ const Contact = () => {
                         type="text"
                         id="message"
                         name="message"
-                        className="relative input h-[88px] py-[8px]"
+                        className="relative input h-[88px] py-[8px] text-[18px]"
                         required
                     ></textarea>
                 </motion.div>
