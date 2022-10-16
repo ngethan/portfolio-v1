@@ -3,9 +3,3 @@
   to = "https://youtu.be/QhOWr56LAdE"
   status = 301
   force = true
-
-[[redirects]]
-  from = "/cm"
-  to = "https://youtu.be/ZwiP31vbC2U"
-  status = 301
-  force = true
