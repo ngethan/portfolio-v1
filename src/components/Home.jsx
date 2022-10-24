@@ -1,8 +1,27 @@
 import React, { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useRef } from "react";
+import { useState } from "react";
+
+const text = ["Software Engineer", "Teacher", "Student", "Musician", "Volunteer"];
 
 const Home = () => {
+    const animationEl = useRef(null);
+    const [articleIndex, setArticleIndex] = useState(0);
+
+    useEffect(() => {
+        animationEl.current.addEventListener("animationiteration", () => {
+            setArticleIndex((currentIndex) => {
+                if (currentIndex + 1 < text.length) {
+                    return currentIndex + 1;
+                } else {
+                    return 0;
+                }
+            });
+        });
+    }, []);
+
     const controls = useAnimation();
     const [ref, inView] = useInView({ threshold: 0.3 });
     useEffect(() => {
@@ -39,7 +58,6 @@ const Home = () => {
     const handleViewWork = () => {
         document.getElementById("work").scrollIntoView();
     };
-
     return (
         <motion.div
             id="home"
@@ -69,7 +87,9 @@ const Home = () => {
                     </h1>
                 </motion.div>
                 <motion.div className="flex text-red-500 text-5xl sm:text-6xl font-bold" variants={item}>
-                    <h2 className="text-[52px]">Software Engineer</h2>
+                    <h2 id="titles" className="text-[52px] fade-in-out" ref={animationEl}>
+                        {text[articleIndex]}
+                    </h2>
                 </motion.div>
                 <motion.p className="text-gray-200 my-2 max-w-[500px] text-lg" variants={item}>
                     I'm a software engineer specializing in building web and desktop applications. Currently, I'm teaching at{" "}

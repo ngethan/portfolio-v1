@@ -144,4 +144,23 @@
     .input:focus {
         background-size: 0 0.1em, 100% 0.1em;
     }
+
+    @keyframes fade-in-out {
+        0% {
+            opacity: 0;
+        }
+
+        5%,
+        95% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .fade-in-out {
+        animation: fade-in-out 3s both infinite;
+    }
 }
