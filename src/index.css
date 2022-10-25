@@ -161,6 +161,6 @@
     }
 
     .fade-in-out {
-        animation: fade-in-out 3s both infinite;
+        animation: fade-in-out 5s both infinite;
     }
 }
